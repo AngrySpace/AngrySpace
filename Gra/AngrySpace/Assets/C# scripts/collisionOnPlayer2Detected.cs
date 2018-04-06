@@ -10,7 +10,7 @@ public class collisionOnPlayer2Detected : MonoBehaviour {
 
     void Start()
     {
-        lifes = 1;
+        lifes = 5;
     }
 
     void OnCollisionEnter(Collision col)
