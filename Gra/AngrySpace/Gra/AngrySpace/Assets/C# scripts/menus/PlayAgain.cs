@@ -12,7 +12,8 @@ public class PlayAgain : MonoBehaviour {
     {
         canvas.gameObject.SetActive(false);
         Time.timeScale = 1;
-        mainCamera.GetComponent<InstantiateBullet>().enabled = true;
+
+       // mainCamera.GetComponent<InstantiateBullet>().enabled = true;
         SceneManager.LoadScene(level);
     }
 }

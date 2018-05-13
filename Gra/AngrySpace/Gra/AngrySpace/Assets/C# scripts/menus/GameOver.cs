@@ -36,6 +36,6 @@ public class GameOver : MonoBehaviour {
     {
         canvas.gameObject.SetActive(true);
         Time.timeScale = 0;
-        mainCamera.GetComponent<InstantiateBullet>().enabled = false;
+        //mainCamera.GetComponent<InstantiateBullet>().enabled = false;
     }
 }
