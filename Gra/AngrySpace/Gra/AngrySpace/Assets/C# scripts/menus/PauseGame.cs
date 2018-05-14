@@ -3,7 +3,6 @@
 public class PauseGame : MonoBehaviour {
 
     public Transform canvas;
-    public Transform mainCamera;
 	
     void Start()
     {

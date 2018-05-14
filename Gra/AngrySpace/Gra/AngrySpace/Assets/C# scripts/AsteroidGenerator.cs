@@ -19,6 +19,7 @@ public class AsteroidGenerator : MonoBehaviour
 	}
 
 	void GenerateAsteroids(){
+        Time.timeScale = 1;
 		CalculateScreenBounds.calculate ();
 		int distanceToVerticalBound = (int) CalculateScreenBounds.distanceToVerticalBoundOfView -1;
 		int distanceToHorizontalBound = (int) CalculateScreenBounds.distanceToHorizontalBoundOfView -1;
@@ -37,7 +38,7 @@ public class AsteroidGenerator : MonoBehaviour
 			asteroid.GetComponent<AsteroidAttributes>().mass = random.Next(MinMass, MaxMass);
 			asteroid.GetComponent<AsteroidAttributes> ().radius = random.Next (MinRadius, MaxRadius);
 		}
-	}
-
+    }
+   
 }
 
