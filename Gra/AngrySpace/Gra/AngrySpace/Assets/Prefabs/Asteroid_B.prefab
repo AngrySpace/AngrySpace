@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23414998766212872}
   - component: {fileID: 54129255295129048}
   - component: {fileID: 135185948595734720}
+  - component: {fileID: 114787008278804974}
   m_Layer: 0
   m_Name: Asteroid_B
   m_TagString: Planet
@@ -38,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1860297623607956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.7421265, y: 0.122760594, z: -30.33}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 150, y: 220, z: 210}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -99,6 +100,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 1
+--- !u!114 &114787008278804974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860297623607956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a479aada3c25ea747b981d50cde980e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angle: 1
 --- !u!135 &135185948595734720
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -107,7 +120,7 @@ SphereCollider:
   m_GameObject: {fileID: 1860297623607956}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.008263013
   m_Center: {x: -0.0005145448, y: 0.0011258097, z: 0.0001998865}

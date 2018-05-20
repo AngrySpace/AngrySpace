@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Move : MonoBehaviour
 {
@@ -8,8 +9,9 @@ public class Move : MonoBehaviour
 	public float WidthOfMovement;
 	public Side side;
 
-
-	private float maxY;
+    private List<Side> collisionSides = new List<Side>();
+    private bool isCollisionWithPlanet = false;
+    private float maxY;
 	private float minY;
 	private float maxX;
 	private float minX;
@@ -36,15 +38,35 @@ public class Move : MonoBehaviour
 		Vector3 verticalMove = new Vector3(0, moveVertical, 0);
 		Vector3 horizontalMove = new Vector3(moveHorizontal, 0, 0);
 		Vector3 currentPosition = transform.position;
-
-		if ((currentPosition.y <= maxY || verticalMove.y < 0) && (currentPosition.y >= minY || verticalMove.y > 0))
+        if ((verticalMove.y < 0 || (currentPosition.y <= maxY && !collisionSides.Contains(Side.Up))) && (verticalMove.y > 0 || (currentPosition.y >= minY && !collisionSides.Contains(Side.Down))))
 		{
 			transform.Translate(verticalMove * Time.deltaTime * gameObject.GetComponent<PlayerAttributes>().speed);
 		}
-		if ((currentPosition.x <= maxX || horizontalMove.x < 0) && (currentPosition.x >= minX || horizontalMove.x > 0))
+		if ((horizontalMove.x < 0 || (currentPosition.x <= maxX && !collisionSides.Contains(Side.Right))) && (horizontalMove.x > 0 || (currentPosition.x >= minX && !collisionSides.Contains(Side.Left))))
 		{
-			transform.Translate(horizontalMove * Time.deltaTime * gameObject.GetComponent<PlayerAttributes>().speed);
+            transform.Translate(horizontalMove * Time.deltaTime * gameObject.GetComponent<PlayerAttributes>().speed);
 		}
 	}
+
+    void OnCollisionStay(Collision col)
+    {
+        if (col.gameObject.tag == "Planet")
+        {
+            GameObject planet = col.gameObject;
+            if (transform.position.x >= planet.transform.position.x)
+                if (!collisionSides.Contains(Side.Left)) collisionSides.Add(Side.Left);
+            if (transform.position.x <= planet.transform.position.x)
+                if (!collisionSides.Contains(Side.Right)) collisionSides.Add(Side.Right);
+            if (transform.position.y >= planet.transform.position.y)
+                if (!collisionSides.Contains(Side.Down)) collisionSides.Add(Side.Down);
+            if (transform.position.y <= planet.transform.position.y)
+                if (!collisionSides.Contains(Side.Up)) collisionSides.Add(Side.Up);
+        }
+    }
+
+    void OnCollisionExit(Collision col)
+    {
+        collisionSides.Clear();
+    }
 }
 
