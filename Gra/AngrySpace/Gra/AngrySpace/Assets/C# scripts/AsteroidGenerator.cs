@@ -12,8 +12,10 @@ public class AsteroidGenerator : MonoBehaviour
 	public int MaxRadius;
     Quaternion rotation = new Quaternion();
     private System.Random random;
+    private static object syncObj = new object();
 
-	void Start ()
+
+    void Start ()
 	{
 		random = new System.Random();
         rotation.x = 0;

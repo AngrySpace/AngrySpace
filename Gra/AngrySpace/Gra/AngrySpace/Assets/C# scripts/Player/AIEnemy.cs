@@ -8,11 +8,18 @@ public class AIEnemy : MonoBehaviour
 	private int Directions = 8;
 	private int moveHorizontal, moveVertical;
 	private int frameMovementDuration = 0;
+    private static int numberOfEnemies = 2;
+    private static int numberOfCreatedEnemies = 1;
 	// Use this for initialization
 	void Start ()
 	{
 		random = new System.Random();
 		gameObject.GetComponent<PlayerKeyController> ().enabled = false;
+        if (numberOfCreatedEnemies < numberOfEnemies)
+        {
+            Instantiate(gameObject, transform.position, transform.rotation);
+            numberOfCreatedEnemies++;
+        }
 	}
 	
 	// Update is called once per frame

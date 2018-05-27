@@ -17,6 +17,9 @@ TagManager:
   - Bullet
   - EnemyBullet
   - PlayerBullet
+  - Fire
+  - BonusLife
+  - BonusFastShots
   layers:
   - Default
   - TransparentFX

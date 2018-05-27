@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Move : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Move : MonoBehaviour
 	public float moveHorizontal;
 	public float WidthOfMovement;
 	public Side side;
+    public Text textLives;
 
     private List<Side> collisionSides = new List<Side>();
     private bool isCollisionWithPlanet = false;
@@ -50,18 +52,29 @@ public class Move : MonoBehaviour
 
     void OnCollisionStay(Collision col)
     {
-        if (col.gameObject.tag == "Planet")
+        switch (col.gameObject.tag)
         {
-            GameObject planet = col.gameObject;
-            if (transform.position.x >= planet.transform.position.x)
-                if (!collisionSides.Contains(Side.Left)) collisionSides.Add(Side.Left);
-            if (transform.position.x <= planet.transform.position.x)
-                if (!collisionSides.Contains(Side.Right)) collisionSides.Add(Side.Right);
-            if (transform.position.y >= planet.transform.position.y)
-                if (!collisionSides.Contains(Side.Down)) collisionSides.Add(Side.Down);
-            if (transform.position.y <= planet.transform.position.y)
-                if (!collisionSides.Contains(Side.Up)) collisionSides.Add(Side.Up);
+            case "Planet":
+                GameObject planet = col.gameObject;
+                if (transform.position.x >= planet.transform.position.x)
+                    if (!collisionSides.Contains(Side.Left)) collisionSides.Add(Side.Left);
+                if (transform.position.x <= planet.transform.position.x)
+                    if (!collisionSides.Contains(Side.Right)) collisionSides.Add(Side.Right);
+                if (transform.position.y >= planet.transform.position.y)
+                    if (!collisionSides.Contains(Side.Down)) collisionSides.Add(Side.Down);
+                if (transform.position.y <= planet.transform.position.y)
+                    if (!collisionSides.Contains(Side.Up)) collisionSides.Add(Side.Up);
+                break;
+            case "BonusLife":
+                GetComponent<PlayerAttributes>().lives++;
+                textLives.text = GetComponent<PlayerAttributes>().lives.ToString();
+                Destroy(col.gameObject);
+                break;
+            case "BonusFastShots":
+
+                break;
         }
+
     }
 
     void OnCollisionExit(Collision col)
