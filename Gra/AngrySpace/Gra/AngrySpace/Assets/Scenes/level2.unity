@@ -4154,6 +4154,8 @@ MonoBehaviour:
   isFire: 0
   rateOfFire: 0.8
   speed: 12
+  isSuperSpeed: 0
+  superSpeedTime: 0
 --- !u!114 &503363474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4411,8 +4413,10 @@ MonoBehaviour:
   - {fileID: 1681332609019478, guid: 2cebdca6b1032c94fbe958a6e2ff6838, type: 2}
   MinMass: 100
   MaxMass: 10000
-  MinRadius: 3
+  MinRadius: 4
   MaxRadius: 10
+  colliderSprite: {fileID: 1055233698681596, guid: f454ceb7a659f814b82e728912fc50b0,
+    type: 2}
 --- !u!114 &596328411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4448,6 +4452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a84adc41018e124baf767a172983603, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetLifes: 40
   bonusRate: 5
   bonusesNumber: 2
   bonuses:
@@ -5989,6 +5994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chanceToShoot: 0
+  numberOfEnemies: 2
 --- !u!114 &1459401497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6046,6 +6052,8 @@ MonoBehaviour:
   isFire: 0
   rateOfFire: 0.8
   speed: 12
+  isSuperSpeed: 0
+  superSpeedTime: 0
 --- !u!54 &1459401501
 Rigidbody:
   m_ObjectHideFlags: 0

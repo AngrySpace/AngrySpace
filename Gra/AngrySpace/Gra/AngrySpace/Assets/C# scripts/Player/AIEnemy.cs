@@ -8,7 +8,7 @@ public class AIEnemy : MonoBehaviour
 	private int Directions = 8;
 	private int moveHorizontal, moveVertical;
 	private int frameMovementDuration = 0;
-    private static int numberOfEnemies = 2;
+    public int numberOfEnemies;
     private static int numberOfCreatedEnemies = 1;
 	// Use this for initialization
 	void Start ()

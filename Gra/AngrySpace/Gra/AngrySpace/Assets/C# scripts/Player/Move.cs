@@ -71,7 +71,8 @@ public class Move : MonoBehaviour
                 Destroy(col.gameObject);
                 break;
             case "BonusFastShots":
-
+                GetComponent<PlayerAttributes>().isSuperSpeed = true;
+                Destroy(col.gameObject);
                 break;
         }
 

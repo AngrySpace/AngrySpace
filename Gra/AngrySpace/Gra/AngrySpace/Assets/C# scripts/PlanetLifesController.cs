@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlanetLifesController : MonoBehaviour
 {
-
-    public int lifes = 1;
+    private int lifes;
     public GameObject explosionEffect;
     private GameObject explosionObject;
     private bool isExploding = false;
@@ -19,6 +18,7 @@ public class PlanetLifesController : MonoBehaviour
     public void Start()
     {
         mainCamera = GameObject.Find("Main Camera");
+        lifes = mainCamera.GetComponent<GenerateBonuses>().planetLifes;
     }
 
     void Update()
@@ -38,6 +38,7 @@ public class PlanetLifesController : MonoBehaviour
                 bonusToCreate = mainCamera.GetComponent<GenerateBonuses>().bonuses[randomBonus];
                 Instantiate(bonusToCreate, transform.position, transform.rotation);
             }
+            Destroy(GetComponent<AsteroidAttributes>().colliderSprite);
             Destroy(gameObject);
         }
     }

@@ -20,6 +20,7 @@ TagManager:
   - Fire
   - BonusLife
   - BonusFastShots
+  - PlanetCollider
   layers:
   - Default
   - TransparentFX

@@ -10,10 +10,9 @@ public class AsteroidGenerator : MonoBehaviour
 	public int MaxMass;
 	public int MinRadius;
 	public int MaxRadius;
+    public GameObject colliderSprite;
     Quaternion rotation = new Quaternion();
     private System.Random random;
-    private static object syncObj = new object();
-
 
     void Start ()
 	{
@@ -30,14 +29,20 @@ public class AsteroidGenerator : MonoBehaviour
         int radius = random.Next(MinRadius, MaxRadius);
         GameObject asteroid = buildAsteroid(position, radius);
         addedAsteroidList.Add(asteroid);
-        for (int i = 1; i < NumberOfAsteroids; i++) {        
+        colliderSprite.transform.localScale = new Vector3(radius / 2.7f, radius / 2.7f, radius / 2.7f);
+        asteroid.GetComponent<AsteroidAttributes>().colliderSprite = (GameObject)Instantiate(colliderSprite, asteroid.transform.position, asteroid.transform.rotation);
+        for (int i = 1; i < NumberOfAsteroids; i++) {
+            float maxTime = 5;
             do
             {
                 position = findPosition();
                 radius = random.Next(MinRadius, MaxRadius);
-            } while (isInsideOtherAsteroid(i, position, radius));
+                maxTime -= Time.deltaTime;
+            } while (isInsideOtherAsteroid(i, position, radius) || maxTime < 0);
             asteroid = buildAsteroid(position, radius);
-            addedAsteroidList.Add(asteroid);        
+            addedAsteroidList.Add(asteroid);
+            colliderSprite.transform.localScale = new Vector3(radius / 2.7f, radius / 2.7f, radius / 2.7f);
+            asteroid.GetComponent<AsteroidAttributes>().colliderSprite = (GameObject)Instantiate(colliderSprite, asteroid.transform.position, asteroid.transform.rotation);
         }
     }
 
@@ -64,6 +69,7 @@ public class AsteroidGenerator : MonoBehaviour
 
     private bool isInsideOtherAsteroid(int currentIndex, Vector3 position, int radius)
     {
+
         for (int j = 0; j < currentIndex; ++j)
         {
             float currentPlanetDistance = Mathf.Sqrt(Mathf.Pow(position.x - addedAsteroidList[j].transform.position.x, 2) + Mathf.Pow(position.y - addedAsteroidList[j].transform.position.y, 2));
