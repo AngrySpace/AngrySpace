@@ -5,6 +5,7 @@ public class AsteroidAttributes : MonoBehaviour
 {
 	public int mass;
 	public int radius;
+    public GameObject colliderSprite;
 	// Use this for initialization
 	void Start ()
 	{

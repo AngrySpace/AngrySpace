@@ -304,9 +304,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Authors:
 
-    Monika Kokot
+    Dominik Florencki
 
-    Dominik Florencki'
+    Monika Kokot'
 --- !u!222 &796168852
 CanvasRenderer:
   m_ObjectHideFlags: 0

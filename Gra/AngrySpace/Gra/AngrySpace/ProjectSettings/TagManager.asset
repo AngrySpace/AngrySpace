@@ -17,6 +17,10 @@ TagManager:
   - Bullet
   - EnemyBullet
   - PlayerBullet
+  - Fire
+  - BonusLife
+  - BonusFastShots
+  - PlanetCollider
   layers:
   - Default
   - TransparentFX

@@ -2,6 +2,6 @@
 
 public enum Side
 {
-	Left, Right
+	Left, Right, Up, Down
 }
 

@@ -9,8 +9,7 @@ public class CollisionBullet : MonoBehaviour {
     }
 
     void OnCollisionEnter(Collision col)
-    {
-		
+    {	
 		if (col.gameObject.CompareTag(BulletTag))
         {
             Destroy(col.gameObject);
