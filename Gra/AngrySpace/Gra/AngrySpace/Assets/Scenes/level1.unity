@@ -767,6 +767,7 @@ GameObject:
   - component: {fileID: 503363472}
   - component: {fileID: 503363475}
   - component: {fileID: 503363467}
+  - component: {fileID: 503363476}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -785,7 +786,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4f13ef6ee1e0a499bc0fb713ed5563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textLives: {fileID: 1524945251}
   BulletTag: EnemyBullet
 --- !u!23 &503363468
 MeshRenderer:
@@ -916,6 +916,17 @@ MonoBehaviour:
   moveHorizontal: 0
   WidthOfMovement: 0.5
   side: 0
+--- !u!114 &503363476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 503363466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388d2fac628e32c40890a95c06f25eb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   textLives: {fileID: 1524945251}
 --- !u!1 &523083332
 GameObject:
@@ -936,6 +947,7 @@ GameObject:
   - component: {fileID: 523083343}
   - component: {fileID: 523083341}
   - component: {fileID: 523083338}
+  - component: {fileID: 523083337}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Enemy
@@ -1014,6 +1026,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &523083337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 523083332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 388d2fac628e32c40890a95c06f25eb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textLives: {fileID: 1291167389}
 --- !u!114 &523083338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1025,7 +1049,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4f13ef6ee1e0a499bc0fb713ed5563, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textLives: {fileID: 1291167389}
   BulletTag: PlayerBullet
 --- !u!54 &523083339
 Rigidbody:
@@ -1083,7 +1106,6 @@ MonoBehaviour:
   moveHorizontal: 0
   WidthOfMovement: 0.5
   side: 1
-  textLives: {fileID: 1291167389}
 --- !u!114 &523083344
 MonoBehaviour:
   m_ObjectHideFlags: 0

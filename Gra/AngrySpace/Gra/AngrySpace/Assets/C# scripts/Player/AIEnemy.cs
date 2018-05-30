@@ -1,40 +1,57 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+/// <summary>
+/// AI enemy class
+/// </summary>
 public class AIEnemy : MonoBehaviour
 {
+	/// <summary>
+	/// The chance to shoot.
+	/// </summary>
 	public int chanceToShoot;
 	private System.Random random;
 	private int Directions = 8;
 	private int moveHorizontal, moveVertical;
 	private int frameMovementDuration = 0;
-    public int numberOfEnemies;
-    private static int numberOfCreatedEnemies = 1;
+	private int speedMin = 10;
+	private int speedMax = 30;
+	/// <summary>
+	/// The number of enemies.
+	/// </summary>
+	public int numberOfEnemies;
+	private static int numberOfCreatedEnemies = 1;
 	// Use this for initialization
 	void Start ()
 	{
-		random = new System.Random();
+		random = new System.Random ();
 		gameObject.GetComponent<PlayerKeyController> ().enabled = false;
-        if (numberOfCreatedEnemies < numberOfEnemies)
-        {
-            Instantiate(gameObject, transform.position, transform.rotation);
-            numberOfCreatedEnemies++;
-        }
+		if (numberOfCreatedEnemies < numberOfEnemies) {
+			Instantiate (gameObject, transform.position, transform.rotation);
+			numberOfCreatedEnemies++;
+		}
 	}
 	
-	// Update is called once per frame
+	/// <summary>
+	/// Update the shot and movement.
+	/// </summary>
 	void Update ()
 	{
 		RandomShoot ();
 		RandomMovement ();
 	}
-
-	void RandomShoot(){
+	/// <summary>
+	/// Randoms the shoot.
+	/// </summary>
+	void RandomShoot ()
+	{
 		bool randomShot = random.Next (0, chanceToShoot) == 0 ? true : false;
 		gameObject.GetComponent<PlayerAttributes> ().isFire = randomShot;
 	}
-
-	void RandomMovement()
+	/// <summary>
+	/// Randoms the movement.
+	/// random the direction and speed
+	/// </summary>
+	void RandomMovement ()
 	{
 		if (frameMovementDuration == 0) {
 			/* Pattern movement direction
@@ -80,7 +97,7 @@ public class AIEnemy : MonoBehaviour
 			}
 			gameObject.GetComponent<Move> ().moveHorizontal = (float)moveHorizontal;
 			gameObject.GetComponent<Move> ().moveVertical = (float)moveVertical;
-			frameMovementDuration = random.Next (10, 30);
+			frameMovementDuration = random.Next (speedMin, speedMax);
 		} else {
 			frameMovementDuration--;
 		}

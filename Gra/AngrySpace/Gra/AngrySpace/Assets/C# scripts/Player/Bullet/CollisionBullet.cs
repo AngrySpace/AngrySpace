@@ -1,27 +1,26 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-
-public class CollisionBullet : MonoBehaviour {
-    public Text textLives;
+/// <summary>
+/// Collision player with bullet manager
+/// </summary>
+public class CollisionBullet : MonoBehaviour
+{
+	/// <summary>
+	/// The bullet tag.
+	/// </summary>
 	public string BulletTag;
-    void Start()
-    {
-    }
 
-    void OnCollisionEnter(Collision col)
-    {	
-		if (col.gameObject.CompareTag(BulletTag))
-        {
-            Destroy(col.gameObject);
-			int lives = gameObject.GetComponent<PlayerAttributes>().lives;
-			lives--;
-			gameObject.GetComponent<PlayerAttributes> ().lives = lives;
-
-            textLives.text = lives.ToString();
-            if (lives == 0)
-            {
-                Destroy(gameObject);
-            }
-        }
-    }
+	void Start ()
+	{
+	}
+	/// <summary>
+	/// On collision with bullet decrement number of player's lives
+	/// </summary>
+	/// <param name="col">Col.</param>
+	void OnCollisionEnter (Collision col)
+	{	
+		if (col.gameObject.CompareTag (BulletTag)) {
+			Destroy (col.gameObject);
+			gameObject.GetComponent<PlayerAttributes> ().DecrementLives ();
+		}
+	}
 }

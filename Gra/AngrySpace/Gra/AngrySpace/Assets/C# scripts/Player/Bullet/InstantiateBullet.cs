@@ -1,23 +1,37 @@
 ﻿using UnityEngine;
-
-public class InstantiateBullet : MonoBehaviour {
+/// <summary>
+/// Instantiate bullet.
+/// </summary>
+public class InstantiateBullet : MonoBehaviour
+{
    
-    public GameObject bullet;
+	/// <summary>
+	/// The bullet.
+	/// </summary>
+	public GameObject bullet;
+	/// <summary>
+	/// The bullet tag.
+	/// </summary>
 	public string BulletTag;
 	private float currentRate;
-	void Start()
+	/// <summary>
+	/// set the player's default rate of fire 
+	/// </summary>
+	void Start ()
 	{
-		currentRate = gameObject.GetComponent<PlayerAttributes>().rateOfFire;;	
+		currentRate = gameObject.GetComponent<PlayerAttributes> ().rateOfFire;
 	}
-
-    void Update ()
-    {
+	/// <summary>
+	/// update if the player can shot 
+	/// </summary>
+	void Update ()
+	{
 		bool isFire = gameObject.GetComponent<PlayerAttributes> ().isFire;
 		if ((currentRate -= Time.deltaTime) < 0f && isFire == true) {
-			GameObject bulletCopy = (GameObject)Instantiate(bullet, gameObject.GetComponent<Transform>().position, gameObject.GetComponent<Transform>().rotation);
-			currentRate = gameObject.GetComponent<PlayerAttributes>().rateOfFire;; 
+			GameObject bulletCopy = (GameObject)Instantiate (bullet, gameObject.GetComponent<Transform> ().position, gameObject.GetComponent<Transform> ().rotation);
+			currentRate = gameObject.GetComponent<PlayerAttributes> ().rateOfFire;
 			bulletCopy.tag = BulletTag;
 			gameObject.GetComponent<PlayerAttributes> ().isFire = false;
 		}
-    }
+	}
 }
