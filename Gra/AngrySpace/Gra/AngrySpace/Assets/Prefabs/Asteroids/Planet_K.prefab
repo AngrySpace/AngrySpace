@@ -98,10 +98,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!114 &114067979144354534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,9 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 342bd15155e1213438e4630eed6b9dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifes: 20
   explosionEffect: {fileID: 100010, guid: 63f6b73572e53574e8c2c7cb539b8634, type: 2}
-  bonusRate: 10
 --- !u!114 &114507333524997932
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -34,7 +34,15 @@ public class PlayerAttributes : MonoBehaviour
 	void Start ()
 	{
 		typicalRateOfFire = rateOfFire;
-	}
+        CalculateScreenBounds.calculate();
+        Vector3 playerSize = gameObject.transform.localScale;
+        Vector3 positionToSet = new Vector3(CalculateScreenBounds.distanceToHorizontalBoundOfView - playerSize.x - 5, 0, 0);
+
+        if (gameObject.tag == "Enemy")
+            gameObject.transform.SetPositionAndRotation(positionToSet, transform.rotation);
+        else
+            gameObject.transform.SetPositionAndRotation(-positionToSet, transform.rotation);
+    }
 	
 	// Update is called once per frame
 	void Update ()

@@ -39,6 +39,7 @@ public class PlanetLifesController : MonoBehaviour
                 Instantiate(bonusToCreate, transform.position, transform.rotation);
             }
             Destroy(GetComponent<AsteroidAttributes>().colliderSprite);
+            mainCamera.GetComponent<AsteroidGenerator>().addedAsteroidList.Remove(gameObject);
             Destroy(gameObject);
         }
     }
