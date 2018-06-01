@@ -1,10 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Class responsible for quiting the game.
+/// </summary>
 public class QuitGame : MonoBehaviour {
 
-	public void quitGame()
+    /// <summary>
+    /// Quits game.
+    /// </summary>
+    public void quitGame()
     {
         Application.Quit();
     }

@@ -13,7 +13,10 @@ public class AsteroidGenerator : MonoBehaviour
 	/// The asteroid list.
 	/// </summary>
 	public List<GameObject> AsteroidList;
-	public List<GameObject> addedAsteroidList = new List<GameObject> ();
+    /// <summary>
+    /// List of already created asteroids.
+    /// </summary>
+    public List<GameObject> addedAsteroidList = new List<GameObject> ();
 	/// <summary>
 	/// The minimum mass.
 	/// </summary>
@@ -31,7 +34,7 @@ public class AsteroidGenerator : MonoBehaviour
 	/// </summary>
 	public int MaxRadius;
 	/// <summary>
-	/// The collider sprite.
+	/// The collider sprite. Gameobject representing every planet's collider.
 	/// </summary>
 	public GameObject colliderSprite;
 	Quaternion rotation = new Quaternion ();
@@ -39,6 +42,9 @@ public class AsteroidGenerator : MonoBehaviour
     private const float creationTime = 15;
     private float currentTime;
 
+    /// <summary>
+    /// Initialization method. Sets basic fields and invokes method which genearate asteroids.
+    /// </summary>
     void Start()
     {
         currentTime = creationTime;
@@ -67,6 +73,9 @@ public class AsteroidGenerator : MonoBehaviour
     //    }
     //}
 
+    /// <summary>
+    /// Generates asteroids in random places. Adds to each asteroid a gameObject representing sphere collider.
+    /// </summary>
     void GenerateAsteroids()
     {
         Time.timeScale = 1;
@@ -78,13 +87,13 @@ public class AsteroidGenerator : MonoBehaviour
         asteroid.GetComponent<AsteroidAttributes>().colliderSprite = (GameObject)Instantiate(colliderSprite, asteroid.transform.position, asteroid.transform.rotation);
         for (int i = 1; i < NumberOfAsteroids; i++)
         {
-            float maxTime = 5;
+            float maxTime = 0.7f;
             do
             {
                 position = findPosition();
                 radius = random.Next(MinRadius, MaxRadius);
                 maxTime -= Time.deltaTime;
-            } while (isInsideOtherAsteroid(i, position, radius) || maxTime < 0);
+            } while (isInsideOtherAsteroid(i, position, radius) && maxTime > 0);
             asteroid = buildAsteroid(position, radius);
             addedAsteroidList.Add(asteroid);
             colliderSprite.transform.localScale = new Vector3(radius / 2.7f, radius / 2.7f, radius / 2.7f);
@@ -108,18 +117,30 @@ public class AsteroidGenerator : MonoBehaviour
         return asteroid;
     }
 
+    /// <summary>
+    /// Finds position for asteroid. Uses random function. The place in which each asteroid can be created is limited by screen
+    /// bounds of view. Also, the asteroid should not be created in a big part of players' fields of moving.
+    /// </summary>
+    /// <returns>The asteroid position.</returns>
     private Vector3 findPosition()
     {
         Vector3 position = new Vector3();
         CalculateScreenBounds.calculate();
         int distanceToVerticalBound = (int)CalculateScreenBounds.distanceToVerticalBoundOfView - 5;
-        float distanceHor = CalculateScreenBounds.distanceToHorizontalBoundOfView / 1.5f;
+        float distanceHor = CalculateScreenBounds.distanceToHorizontalBoundOfView / 1.8f;
         int distanceToHorizontalBound = (int)distanceHor;
         position.y = random.Next((-1) * distanceToVerticalBound, distanceToVerticalBound);
         position.x = random.Next((-1) * distanceToHorizontalBound, distanceToHorizontalBound);
         return position;
     }
 
+    /// <summary>
+    /// Chcecks if asteroid to be created collides with other asteroid.
+    /// </summary>
+    /// <returns><c>True</c> if the asteroid to be created collides with other asteroid, </c>false</c> otherwise.</returns>
+    /// <param name="currentIndex">Index of asteroid to be created in addedAsteroidList.</param>
+    /// <param name="position">Position of asteroid to be created.</param>
+    /// <param name="radius">Radius of asteroid to be created.</param>
     private bool isInsideOtherAsteroid(int currentIndex, Vector3 position, int radius)
     {
 

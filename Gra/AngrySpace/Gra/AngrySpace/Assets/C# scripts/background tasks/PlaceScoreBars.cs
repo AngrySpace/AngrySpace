@@ -1,13 +1,24 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Class responsible for placing score bars.
+/// </summary>
 public class PlaceScoreBars : MonoBehaviour {
+    /// <summary>
+    /// First player's score bar.
+    /// </summary>
     public Image player1Score;
+    /// <summary>
+    /// Second player's score bar.
+    /// </summary>
     public Image player2Score;
 
-	void Start ()
+    /// <summary>
+    /// Counts screen bounds and places score bars in upper corners.
+    /// </summary>
+    void Start ()
     {
-        CalculateScreenBounds.calculate();
         Vector3 scoreBarSize = player1Score.rectTransform.sizeDelta;
         float screenSizeX = Screen.width / 2.0f;
         float negativeScreenSizeX = -screenSizeX;

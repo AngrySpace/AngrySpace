@@ -18,7 +18,7 @@ public class PlanetLifesController : MonoBehaviour
     public void Start()
     {
         mainCamera = GameObject.Find("Main Camera");
-        lifes = mainCamera.GetComponent<GenerateBonuses>().planetLifes;
+        lifes = mainCamera.GetComponent<BonusesController>().planetLifes;
     }
 
     void Update()
@@ -30,12 +30,12 @@ public class PlanetLifesController : MonoBehaviour
             isExploding = false;
             explosionTime = 0;
             Destroy(explosionObject);
-            int bonusRate = mainCamera.GetComponent<GenerateBonuses>().bonusRate;
+            int bonusRate = mainCamera.GetComponent<BonusesController>().bonusRate;
             randomIsBonus = random.Next(0, bonusRate);
             if (randomIsBonus == 0)
             {
-                randomBonus = random.Next(0, mainCamera.GetComponent<GenerateBonuses>().bonusesNumber);
-                bonusToCreate = mainCamera.GetComponent<GenerateBonuses>().bonuses[randomBonus];
+                randomBonus = random.Next(0, mainCamera.GetComponent<BonusesController>().bonusesNumber);
+                bonusToCreate = mainCamera.GetComponent<BonusesController>().bonuses[randomBonus];
                 Instantiate(bonusToCreate, transform.position, transform.rotation);
             }
             Destroy(GetComponent<AsteroidAttributes>().colliderSprite);

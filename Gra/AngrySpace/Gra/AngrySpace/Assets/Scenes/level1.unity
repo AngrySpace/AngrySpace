@@ -1077,8 +1077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602a22ed0500bc14987019d7dd1bc069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chanceToShoot: 0
-  numberOfEnemies: 1
+  chanceToShoot: 4
 --- !u!114 &523083342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1403,11 +1402,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 596328405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a84adc41018e124baf767a172983603, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f7797cd4c2d6424cb0e6074b931c675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetLifes: 20
-  bonusRate: 1
+  planetLifes: 40
+  bonusRate: 2
   bonusesNumber: 2
   bonuses:
   - {fileID: 1831864436856178, guid: 69c1387b8f6102540bf4624ff10a1973, type: 2}
@@ -2272,7 +2271,6 @@ GameObject:
   - component: {fileID: 938593531}
   - component: {fileID: 938593530}
   - component: {fileID: 938593529}
-  - component: {fileID: 938593528}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -2280,19 +2278,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &938593528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114923584621513036, guid: b3b61fcb7f8ea614782de511b787cf57,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 938593527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a479aada3c25ea747b981d50cde980e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  angle: 0.01
 --- !u!23 &938593529
 MeshRenderer:
   m_ObjectHideFlags: 0

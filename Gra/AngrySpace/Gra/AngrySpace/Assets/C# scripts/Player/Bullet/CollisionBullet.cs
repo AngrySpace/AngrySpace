@@ -9,9 +9,6 @@ public class CollisionBullet : MonoBehaviour
 	/// </summary>
 	public string BulletTag;
 
-	void Start ()
-	{
-	}
 	/// <summary>
 	/// On collision with bullet decrement number of player's lives
 	/// </summary>

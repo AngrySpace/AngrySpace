@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 /// <summary>
 /// Player's text manu manager
 /// </summary>
@@ -10,7 +9,7 @@ public class TextManager : MonoBehaviour
 	/// Player lives text
 	/// </summary>
 	public Text textLives;
-	// Use this for initialization
+	
 	void Start ()
 	{
 		UpdateTextLives ();

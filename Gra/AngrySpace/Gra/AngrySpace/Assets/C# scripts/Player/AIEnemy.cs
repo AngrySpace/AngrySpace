@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 /// <summary>
 /// AI enemy class
 /// </summary>
@@ -9,26 +10,32 @@ public class AIEnemy : MonoBehaviour
 	/// The chance to shoot.
 	/// </summary>
 	public int chanceToShoot;
-	private System.Random random;
-	private int Directions = 8;
-	private int moveHorizontal, moveVertical;
+	private static System.Random random;
+    /// <summary>
+    /// Number of possible directions.
+    /// </summary>
+    private int Directions = 8;
+    /// <summary>
+    /// The horizontal and vertical move.
+    /// </summary>
+    private int moveHorizontal, moveVertical;
 	private int frameMovementDuration = 0;
-	private int speedMin = 10;
-	private int speedMax = 30;
-	/// <summary>
-	/// The number of enemies.
-	/// </summary>
-	public int numberOfEnemies;
-	private static int numberOfCreatedEnemies = 1;
-	// Use this for initialization
-	void Start ()
+    /// <summary>
+    /// Minimum player's speed.
+    /// </summary>
+    private int speedMin = 10;
+    /// <summary>
+    /// Maximum player's speed.
+    /// </summary>
+    private int speedMax = 30;
+
+    /// <summary>
+    /// Sets default values. Disables Key controller to the enemy.
+    /// </summary>
+    void Start ()
 	{
 		random = new System.Random ();
 		gameObject.GetComponent<PlayerKeyController> ().enabled = false;
-		if (numberOfCreatedEnemies < numberOfEnemies) {
-			Instantiate (gameObject, transform.position, transform.rotation);
-			numberOfCreatedEnemies++;
-		}
 	}
 	
 	/// <summary>

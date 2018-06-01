@@ -13,11 +13,7 @@ public class PlayerKeyController : MonoBehaviour
 	/// The horizontal key.
 	/// </summary>
 	public string HorizontalKey;
-	// Use this for initialization
-	void Start ()
-	{
-	
-	}
+
 	/// <summary>
 	/// Update this position of the player.
 	/// </summary>

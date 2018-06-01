@@ -28,7 +28,7 @@ public class Move : MonoBehaviour
     private float minY;
     private float maxX;
     private float minX;
-    // Use this for initialization
+
     void Start()
     {
         Vector3 playerHalfSize = WidthOfMovement * transform.localScale;
@@ -93,7 +93,6 @@ public class Move : MonoBehaviour
                 Destroy(col.gameObject);
                 break;
         }
-
     }
 
     void OnCollisionExit(Collision col)

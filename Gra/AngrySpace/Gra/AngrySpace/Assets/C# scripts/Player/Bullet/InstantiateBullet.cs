@@ -4,7 +4,7 @@
 /// </summary>
 public class InstantiateBullet : MonoBehaviour
 {
-   
+  
 	/// <summary>
 	/// The bullet.
 	/// </summary>
@@ -13,7 +13,10 @@ public class InstantiateBullet : MonoBehaviour
 	/// The bullet tag.
 	/// </summary>
 	public string BulletTag;
-	private float currentRate;
+    /// <summary>
+    /// Curret bullet rate.
+    /// </summary>
+    private float currentRate;
 	/// <summary>
 	/// set the player's default rate of fire 
 	/// </summary>
