@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class BulletMovement : MonoBehaviour
@@ -13,20 +11,32 @@ public class BulletMovement : MonoBehaviour
 	/// The speed.
 	/// </summary>
 	public float speed = 500;
+    /// <summary>
+	/// Vector of bullet movement.
+	/// </summary>
 	Vector3 shootCurrent;
-	float xBound;
+    /// <summary>
+	/// The speed of rotation around planet in degrees per second.
+	/// </summary>
 	float rotationSpeed = 100.0f;
-	//degrees per second
+    /// <summary>
+	/// The field telling if the bullet is currently rotating.
+	/// </summary>
 	bool isRotating = false;
+    /// <summary>
+	/// Planet the bullet is colliding with.
+	/// </summary>
 	GameObject planet;
 
+    /// <summary>
+	/// Initializes bounds of view and the movement vector.
+	/// </summary>
 	void Start ()
 	{
 		CalculateScreenBounds.calculate ();
-		xBound = xDirectionCoeffcient * CalculateScreenBounds.distanceToHorizontalBoundOfView;
 		shootCurrent = new Vector3 (xDirectionCoeffcient * 0.5f, 0, 0);
-
 	}
+
 	/// <summary>
 	/// Update this bullet.
 	/// The rotate and
@@ -82,11 +92,17 @@ public class BulletMovement : MonoBehaviour
 		}
 	}
 
+    /// <summary>
+	/// When the bullet stops coliding with planet, it should also stop rotating.
+	/// </summary>
 	void OnCollisionExit ()
 	{
 		isRotating = false;
 	}
 
+    /// <summary>
+	/// When the bullet starts coliding with planet, it should also start rotating.
+	/// </summary>
 	void OnCollisionStart ()
 	{
 		isRotating = true;
