@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 
+/// <summary>
+/// Class responsible for player movement.
+/// </summary>
 public class Move : MonoBehaviour
 {
     /// <summary>
@@ -21,14 +22,35 @@ public class Move : MonoBehaviour
     /// The side.
     /// </summary>
     public Side side;
-
+    /// <summary>
+    /// List of sides on which player collides with planet.
+    /// </summary>
     private List<Side> collisionSides = new List<Side>();
+    /// <summary>
+    /// Field describing if the player is colliding with planet.
+    /// </summary>
     private bool isCollisionWithPlanet = false;
+    /// <summary>
+    /// Maximal vertical field of view where player can move - up side of the field.
+    /// </summary>
     private float maxY;
+    /// <summary>
+    /// Minimal vertical field of view where player can move - down side of the field.
+    /// </summary>
     private float minY;
+    /// <summary>
+    /// Maximal horizontal field of view where player can move - right side of the field.
+    /// </summary>
     private float maxX;
+    /// <summary>
+    /// Minimal horizontal field of view where player can move - left side of the field.
+    /// </summary>
     private float minX;
 
+    /// <summary>
+    /// Sets basic fields. Counts player half size and the limits of player movement depending on 
+    /// its size and screen bounds.
+    /// </summary>
     void Start()
     {
         Vector3 playerHalfSize = WidthOfMovement * transform.localScale;
@@ -49,9 +71,12 @@ public class Move : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Controls player movement. If the player does not collide with his field bounds nor with any planet, 
+    /// he will be moved.
+    /// </summary>
     void FixedUpdate()
     {
-
         Vector3 verticalMove = new Vector3(0, moveVertical, 0);
         Vector3 horizontalMove = new Vector3(moveHorizontal, 0, 0);
         Vector3 currentPosition = transform.position;
@@ -65,6 +90,10 @@ public class Move : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks if player collides with something. It this is the planet, side of the collision is added to collisionSides
+    /// field. If it is bonus, player components are updated.
+    /// </summary>
     void OnCollisionStay(Collision col)
     {
         switch (col.gameObject.tag)
@@ -95,6 +124,9 @@ public class Move : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Clears collisionSides field when player does not collide with the planet anymore.
+    /// </summary>
     void OnCollisionExit(Collision col)
     {
         collisionSides.Clear();
