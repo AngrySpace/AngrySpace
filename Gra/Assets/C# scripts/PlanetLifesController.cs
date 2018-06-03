@@ -54,7 +54,10 @@ public class PlanetLifesController : MonoBehaviour
     /// Current frames number that passed from first enemy's bullet collision.
     /// </summary>
     private int currentFramesAfterCollisionForEnemy;
-
+	/// <summary>
+	/// The bonus side.
+	/// </summary>
+	private Side bonusSide;
     /// <summary>
     /// Initialization method. Sets main camera object and planet lifes.
     /// </summary>
@@ -94,7 +97,8 @@ public class PlanetLifesController : MonoBehaviour
     {
         int randomBonus = random.Next(0, mainCamera.GetComponent<BonusesController>().bonusesNumber);
         bonusToCreate = mainCamera.GetComponent<BonusesController>().bonuses[randomBonus];
-        Instantiate(bonusToCreate, transform.position, transform.rotation);
+        GameObject bonus = Instantiate(bonusToCreate, transform.position, transform.rotation);
+		bonus.GetComponent<BonusMovement> ().setSide (this.bonusSide);
     }
 
     /// <summary>
@@ -125,11 +129,13 @@ public class PlanetLifesController : MonoBehaviour
         GameObject bullet = col.gameObject;
         if (bullet.CompareTag(bulletPlayerTag) && currentFramesAfterCollisionForPlayer <= 0)
         {
+			this.bonusSide = Side.Left;
             decrementLifes();
             currentFramesAfterCollisionForPlayer = maxFramesPerCollision;
         }
         else if (bullet.CompareTag(bulletEnemyTag) && currentFramesAfterCollisionForEnemy <= 0)
         {
+			this.bonusSide = Side.Right;
             decrementLifes();
             currentFramesAfterCollisionForEnemy = maxFramesPerCollision;
         }

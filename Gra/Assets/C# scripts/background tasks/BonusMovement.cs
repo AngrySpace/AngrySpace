@@ -23,8 +23,19 @@ public class BonusMovement : MonoBehaviour {
     /// Initialization of movemet side.
     /// </summary>
     void Start () {
-        ranomizeBonusMovementSide();    
+        //ranomizeBonusMovementSide();    
     }
+	/// <summary>
+	/// Sets the side and velocity.
+	/// </summary>
+	/// <param name="side">Side.</param>
+	public void setSide(Side side){
+		this.side = side;
+		if(side == Side.Left)
+			movementVector = new Vector3(-0.5f, 0, 0);
+		else
+			movementVector = new Vector3(0.5f, 0, 0);
+	}
 
     /// <summary>
     /// Randomize bonus movement. It will move either to the left side or the right one.
