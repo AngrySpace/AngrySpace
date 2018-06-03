@@ -37,17 +37,19 @@ public class AsteroidGenerator : MonoBehaviour
 	/// The collider sprite. Gameobject representing every planet's collider.
 	/// </summary>
 	public GameObject colliderSprite;
-	Quaternion rotation = new Quaternion ();
+    /// <summary>
+	/// The number by which the asteroid collider radius will be multiplied 
+    /// to create collider sprite with proper size.
+	/// </summary>
+    private const float colliderSpriteRadiusFraction = 5 / 6f;
+	private Quaternion rotation = new Quaternion ();
 	private System.Random random;
-    private const float creationTime = 15;
-    private float currentTime;
 
     /// <summary>
     /// Initialization method. Sets basic fields and invokes method which genearate asteroids.
     /// </summary>
     void Start()
     {
-        currentTime = creationTime;
         random = new System.Random();
         rotation.x = 0;
         rotation.y = 0;
@@ -55,39 +57,19 @@ public class AsteroidGenerator : MonoBehaviour
         GenerateAsteroids();
     }
 
-    //void Update()
-    //{
-    //    currentTime -= Time.deltaTime;
-    //    if (currentTime < 0)
-    //    {
-    //        currentTime = creationTime;
-    //        Vector3 position = findPosition();
-    //        int radius = random.Next(MinRadius, MaxRadius);
-    //        if (!isInsideOtherAsteroid(addedAsteroidList.Count, position, radius)) ;
-    //        {
-    //            GameObject asteroid = buildAsteroid(position, radius);
-    //            addedAsteroidList.Add(asteroid);
-    //            colliderSprite.transform.localScale = new Vector3(radius / 2.7f, radius / 2.7f, radius / 2.7f);
-    //            asteroid.GetComponent<AsteroidAttributes>().colliderSprite = (GameObject)Instantiate(colliderSprite, asteroid.transform.position, asteroid.transform.rotation);
-    //        }
-    //    }
-    //}
-
     /// <summary>
     /// Generates asteroids in random places. Adds to each asteroid a gameObject representing sphere collider.
     /// </summary>
     void GenerateAsteroids()
     {
         Time.timeScale = 1;
-        Vector3 position = findPosition();
-        int radius = random.Next(MinRadius, MaxRadius);
-        GameObject asteroid = buildAsteroid(position, radius);
-        addedAsteroidList.Add(asteroid);
-        colliderSprite.transform.localScale = new Vector3(radius * 5f / 6f, radius * 5f / 6f, radius * 5f / 6f);
-        asteroid.GetComponent<AsteroidAttributes>().colliderSprite = (GameObject)Instantiate(colliderSprite, asteroid.transform.position, asteroid.transform.rotation);
-        for (int i = 1; i < NumberOfAsteroids; i++)
+        Vector3 position;
+        int radius;
+        GameObject asteroid;
+        float spriteSize;
+        for (int i = 0; i < NumberOfAsteroids; i++)
         {
-            float maxTime = 0.7f;
+            float maxTime = 0.7f; //after this time, the asteroid will be build no matter if it collides with other asteroid
             do
             {
                 position = findPosition();
@@ -96,7 +78,8 @@ public class AsteroidGenerator : MonoBehaviour
             } while (isInsideOtherAsteroid(i, position, radius) && maxTime > 0);
             asteroid = buildAsteroid(position, radius);
             addedAsteroidList.Add(asteroid);
-            colliderSprite.transform.localScale = new Vector3(radius * 5f / 6f, radius  * 5f / 6f, radius * 5f / 6f);
+            spriteSize = colliderSpriteRadiusFraction * radius;
+            colliderSprite.transform.localScale = new Vector3(spriteSize, spriteSize, spriteSize );
             asteroid.GetComponent<AsteroidAttributes>().colliderSprite = (GameObject)Instantiate(colliderSprite, asteroid.transform.position, asteroid.transform.rotation);
         }
     }
@@ -143,7 +126,6 @@ public class AsteroidGenerator : MonoBehaviour
     /// <param name="radius">Radius of asteroid to be created.</param>
     private bool isInsideOtherAsteroid(int currentIndex, Vector3 position, int radius)
     {
-
         for (int j = 0; j < currentIndex; ++j)
         {
             float currentPlanetDistance = Mathf.Sqrt(Mathf.Pow(position.x - addedAsteroidList[j].transform.position.x, 2) + Mathf.Pow(position.y - addedAsteroidList[j].transform.position.y, 2));

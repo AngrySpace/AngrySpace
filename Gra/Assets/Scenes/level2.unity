@@ -4503,7 +4503,7 @@ MonoBehaviour:
   bonuses:
   - {fileID: 1831864436856178, guid: 69c1387b8f6102540bf4624ff10a1973, type: 2}
   - {fileID: 1556307212662474, guid: 8ce8c69484ef7c7409c8e29dd6d3aa18, type: 2}
-  planetLifes: 1
+  planetLifes: 100
 --- !u!1 &617745413
 GameObject:
   m_ObjectHideFlags: 0

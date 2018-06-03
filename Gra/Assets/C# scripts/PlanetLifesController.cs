@@ -62,7 +62,7 @@ public class PlanetLifesController : MonoBehaviour
     {
         currentFramesAfterCollisionForPlayer = maxFramesPerCollision;
         currentFramesAfterCollisionForEnemy = maxFramesPerCollision;
-        mainCamera = GameObject.Find("Main Camera");
+        mainCamera = Camera.main.gameObject; 
         lifes = mainCamera.GetComponent<BonusesController>().planetLifes;
     }
 

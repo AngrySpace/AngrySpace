@@ -649,7 +649,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textWhoWon: {fileID: 726653027}
   canvas: {fileID: 907999620}
-  mainCamera: {fileID: 596328409}
 --- !u!114 &185866046
 MonoBehaviour:
   m_ObjectHideFlags: 0

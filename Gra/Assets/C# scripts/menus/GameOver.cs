@@ -13,10 +13,6 @@ public class GameOver : MonoBehaviour {
     /// Canvas with game over info.
     /// </summary>
     public Transform canvas;
-    /// <summary>
-    /// Main camera.
-    /// </summary>
-    public Transform mainCamera;
 
     /// <summary>
     /// At the beginning of the game, "Game Over" canvas should not be shown.

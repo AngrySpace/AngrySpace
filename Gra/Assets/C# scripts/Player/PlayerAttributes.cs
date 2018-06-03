@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 /// <summary>
 /// Player attributes, like speed, rate of fire, ...
 /// </summary>
@@ -30,6 +29,10 @@ public class PlayerAttributes : MonoBehaviour
 	/// </summary>
 	public float superSpeedTime;
     /// <summary>
+	/// The super speed left time.
+	/// </summary>
+	private float superSpeedLeftTime;
+    /// <summary>
     /// The typical speed time.
     /// </summary>
     private float typicalRateOfFire;
@@ -37,12 +40,25 @@ public class PlayerAttributes : MonoBehaviour
     /// The tag of the enemy.
     /// </summary>
     private const string enemyTag = "Enemy";
+    /// <summary>
+    /// How far from the edge of the screen will be player placed.
+    /// </summary>
+    private const int moveAwayDistance = 3;
+    /// <summary>
+    /// The rate of fire that the player will get in super speed mode.
+    /// </summary>
+    private const float superSpeedPlayerRateOfFire = 0;
+    /// <summary>
+    /// The rate of fire that the AI enemy will get in super speed mode.
+    /// </summary>
+    private const float superSpeedAIEnemyRateOfFire = 0.2f;
 
     /// <summary>
 	/// Sets starting values.
 	/// </summary>
 	void Start ()
 	{
+        superSpeedLeftTime = superSpeedTime;
 		typicalRateOfFire = rateOfFire;
         setPlayerPosition();     
     }
@@ -54,7 +70,7 @@ public class PlayerAttributes : MonoBehaviour
     {
         CalculateScreenBounds.calculate();
         Vector3 playerSize = gameObject.transform.localScale;
-        Vector3 positionToSet = new Vector3(CalculateScreenBounds.distanceToHorizontalBoundOfView - playerSize.x - 5, 0, 0);
+        Vector3 positionToSet = new Vector3(CalculateScreenBounds.distanceToHorizontalBoundOfView - playerSize.x - moveAwayDistance, 0, 0);
 
         if (gameObject.CompareTag(enemyTag))
             gameObject.transform.SetPositionAndRotation(positionToSet, transform.rotation);
@@ -78,23 +94,18 @@ public class PlayerAttributes : MonoBehaviour
 	/// </summary>
     private void changeRateOfFire()
     {
-        if (GetComponent<AIEnemy>())
+        if (GetComponent<AIEnemy>() && GetComponent<AIEnemy>().enabled == true)
         {
-            if (GetComponent<AIEnemy>().enabled == true)
-                rateOfFire = 0.2f;
-            else
-            {
-                rateOfFire = 0;
-            }
+            rateOfFire = superSpeedAIEnemyRateOfFire;
         }
         else
         {
-            rateOfFire = 0;
+            rateOfFire = superSpeedPlayerRateOfFire;
         }
-        if ((superSpeedTime -= Time.deltaTime) < 0)
+        if ((superSpeedLeftTime -= Time.deltaTime) < 0)
         {
             rateOfFire = typicalRateOfFire;
-            superSpeedTime = 5;
+            superSpeedLeftTime = superSpeedTime;
             isSuperSpeed = false;
         }
     }

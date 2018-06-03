@@ -10,7 +10,7 @@ public class AIEnemy : MonoBehaviour
 	/// The chance to shoot.
 	/// </summary>
 	public int chanceToShoot;
-	private static System.Random random;
+	private static System.Random random = new System.Random();
     /// <summary>
     /// Number of possible directions.
     /// </summary>
@@ -28,15 +28,6 @@ public class AIEnemy : MonoBehaviour
     /// Maximum player's speed.
     /// </summary>
     private int speedMax = 30;
-
-    /// <summary>
-    /// Sets default values. Disables Key controller to the enemy.
-    /// </summary>
-    void Start ()
-	{
-		random = new System.Random ();
-		gameObject.GetComponent<PlayerKeyController> ().enabled = false;
-	}
 	
 	/// <summary>
 	/// Update the shot and movement.

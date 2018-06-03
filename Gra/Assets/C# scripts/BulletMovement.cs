@@ -14,15 +14,19 @@ public class BulletMovement : MonoBehaviour
     /// <summary>
 	/// Vector of bullet movement.
 	/// </summary>
-	Vector3 shootCurrent;
+	private Vector3 shootCurrent;
     /// <summary>
 	/// The speed of rotation around planet in degrees per second.
 	/// </summary>
-	float rotationSpeed = 100.0f;
+	private float rotationSpeed = 100.0f;
     /// <summary>
 	/// Planet the bullet is colliding with.
 	/// </summary>
-	GameObject planet;
+	private GameObject planet;
+    /// <summary>
+	/// Planet the bullet is colliding with.
+	/// </summary>
+	private const string planetTag = "Planet";
 
     /// <summary>
 	/// Initializes bounds of view and the movement vector.
@@ -44,11 +48,11 @@ public class BulletMovement : MonoBehaviour
 		if (!isInWindow ())
 			Destroy (gameObject);		
 	}
-	/// <summary>
-	/// check if the bullet is in the window
-	/// </summary>
-	/// <returns><c>true</c>, if in window was ised, <c>false</c> otherwise.</returns>
-	bool isInWindow ()
+    /// <summary>
+    /// check if the bullet is in the window
+    /// </summary>
+    /// <returns><c>true</c>, if in window was ised, <c>false</c> otherwise.</returns>
+    private bool isInWindow ()
 	{
 		if (transform.position.x > CalculateScreenBounds.distanceToHorizontalBoundOfView)
 			return false;
@@ -67,7 +71,7 @@ public class BulletMovement : MonoBehaviour
 	/// <param name="col">Col.</param>
 	void OnCollisionStay (Collision col)
 	{
-		if (col.gameObject.tag == "Planet") {
+		if (col.gameObject.CompareTag(planetTag)) {
 			planet = col.gameObject;
 			Vector3 direction;
 			if (transform.position.y > planet.transform.position.y)
@@ -81,7 +85,6 @@ public class BulletMovement : MonoBehaviour
 					direction = Vector3.forward;
 			
 			transform.RotateAround (planet.transform.position, direction, rotationSpeed * Time.deltaTime);
-
 		}
 	}
 }
