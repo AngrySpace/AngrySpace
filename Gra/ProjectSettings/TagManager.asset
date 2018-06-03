@@ -22,6 +22,7 @@ TagManager:
   - BonusFastShots
   - PlanetCollider
   - ImagePlayer22
+  - BonusText
   layers:
   - Default
   - TransparentFX

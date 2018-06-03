@@ -1,0 +1,128 @@
+\hypertarget{class_bonus_movement}{}\section{Bonus\+Movement Class Reference}
+\label{class_bonus_movement}\index{Bonus\+Movement@{Bonus\+Movement}}
+
+
+Class responsible for movement of bonus (side, speed).  
+
+
+Inheritance diagram for Bonus\+Movement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_bonus_movement}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_bonus_movement_af663a81c63835c143bc17cb1f86e8e46}{speed}}
+\begin{DoxyCompactList}\small\item\em Speed of bonus movement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_bonus_movement_af3228316fa495638dcdb186e09e5649a}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Initialization of movemet side. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bonus_movement_adf840dc4aa70ab5a73860849f1299785}{ranomize\+Bonus\+Movement\+Side}} ()
+\begin{DoxyCompactList}\small\item\em Randomize bonus movement. It will move either to the left side or the right one. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bonus_movement_a11644c2fe7b847b9d7710378a48a48d6}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Translates the positionof bonus. If bonus is outside the screen, it will be destroyed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_bonus_movement_ad4a51d66472b7d98a7813fca3c2cb626}{is\+In\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the bullet is in the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Side \mbox{\hyperlink{class_bonus_movement_a6e42122052649933fe8e7bb8d50314c7}{side}}
+\begin{DoxyCompactList}\small\item\em Side of bonus movement. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_bonus_movement_a82195764de7f3cd02f2fe40077cc4f7a}\label{class_bonus_movement_a82195764de7f3cd02f2fe40077cc4f7a}} 
+System.\+Random {\bfseries random} = new System.\+Random()
+\item 
+Vector3 \mbox{\hyperlink{class_bonus_movement_a8f34e489370f3d6538641b3f44b2c77c}{movement\+Vector}}
+\begin{DoxyCompactList}\small\item\em Vector of bonus movement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class responsible for movement of bonus (side, speed). 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_bonus_movement_ad4a51d66472b7d98a7813fca3c2cb626}\label{class_bonus_movement_ad4a51d66472b7d98a7813fca3c2cb626}} 
+\index{Bonus\+Movement@{Bonus\+Movement}!is\+In\+Window@{is\+In\+Window}}
+\index{is\+In\+Window@{is\+In\+Window}!Bonus\+Movement@{Bonus\+Movement}}
+\subsubsection{\texorpdfstring{is\+In\+Window()}{isInWindow()}}
+{\footnotesize\ttfamily bool Bonus\+Movement.\+is\+In\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if the bullet is in the window. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true}, if in window was ised, {\ttfamily false} otherwise.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_bonus_movement_adf840dc4aa70ab5a73860849f1299785}\label{class_bonus_movement_adf840dc4aa70ab5a73860849f1299785}} 
+\index{Bonus\+Movement@{Bonus\+Movement}!ranomize\+Bonus\+Movement\+Side@{ranomize\+Bonus\+Movement\+Side}}
+\index{ranomize\+Bonus\+Movement\+Side@{ranomize\+Bonus\+Movement\+Side}!Bonus\+Movement@{Bonus\+Movement}}
+\subsubsection{\texorpdfstring{ranomize\+Bonus\+Movement\+Side()}{ranomizeBonusMovementSide()}}
+{\footnotesize\ttfamily void Bonus\+Movement.\+ranomize\+Bonus\+Movement\+Side (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Randomize bonus movement. It will move either to the left side or the right one. 
+
+\mbox{\Hypertarget{class_bonus_movement_af3228316fa495638dcdb186e09e5649a}\label{class_bonus_movement_af3228316fa495638dcdb186e09e5649a}} 
+\index{Bonus\+Movement@{Bonus\+Movement}!Start@{Start}}
+\index{Start@{Start}!Bonus\+Movement@{Bonus\+Movement}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Bonus\+Movement.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialization of movemet side. 
+
+\mbox{\Hypertarget{class_bonus_movement_a11644c2fe7b847b9d7710378a48a48d6}\label{class_bonus_movement_a11644c2fe7b847b9d7710378a48a48d6}} 
+\index{Bonus\+Movement@{Bonus\+Movement}!Update@{Update}}
+\index{Update@{Update}!Bonus\+Movement@{Bonus\+Movement}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Bonus\+Movement.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Translates the positionof bonus. If bonus is outside the screen, it will be destroyed. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_bonus_movement_a8f34e489370f3d6538641b3f44b2c77c}\label{class_bonus_movement_a8f34e489370f3d6538641b3f44b2c77c}} 
+\index{Bonus\+Movement@{Bonus\+Movement}!movement\+Vector@{movement\+Vector}}
+\index{movement\+Vector@{movement\+Vector}!Bonus\+Movement@{Bonus\+Movement}}
+\subsubsection{\texorpdfstring{movement\+Vector}{movementVector}}
+{\footnotesize\ttfamily Vector3 Bonus\+Movement.\+movement\+Vector\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vector of bonus movement. 
+
+\mbox{\Hypertarget{class_bonus_movement_a6e42122052649933fe8e7bb8d50314c7}\label{class_bonus_movement_a6e42122052649933fe8e7bb8d50314c7}} 
+\index{Bonus\+Movement@{Bonus\+Movement}!side@{side}}
+\index{side@{side}!Bonus\+Movement@{Bonus\+Movement}}
+\subsubsection{\texorpdfstring{side}{side}}
+{\footnotesize\ttfamily Side Bonus\+Movement.\+side\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Side of bonus movement. 
+
+\mbox{\Hypertarget{class_bonus_movement_af663a81c63835c143bc17cb1f86e8e46}\label{class_bonus_movement_af663a81c63835c143bc17cb1f86e8e46}} 
+\index{Bonus\+Movement@{Bonus\+Movement}!speed@{speed}}
+\index{speed@{speed}!Bonus\+Movement@{Bonus\+Movement}}
+\subsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily float Bonus\+Movement.\+speed}
+
+
+
+Speed of bonus movement. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+background tasks/Bonus\+Movement.\+cs\end{DoxyCompactItemize}

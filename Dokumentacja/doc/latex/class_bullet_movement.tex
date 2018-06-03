@@ -1,0 +1,166 @@
+\hypertarget{class_bullet_movement}{}\section{Bullet\+Movement Class Reference}
+\label{class_bullet_movement}\index{Bullet\+Movement@{Bullet\+Movement}}
+
+
+The movement of the bullet, including parts where it rotates around a planet.  
+
+
+Inheritance diagram for Bullet\+Movement\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_bullet_movement}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_bullet_movement_a87f4f6ec7b16819ee058cfc9121660e0}{x\+Direction\+Coeffcient}}
+\begin{DoxyCompactList}\small\item\em The x direction coeffcient. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_bullet_movement_aeb1ed7a8c4bd668bb3039562e46fa63b}{speed}} = 500
+\begin{DoxyCompactList}\small\item\em The speed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_bullet_movement_aedea440e001bde34585c344da0557b6e}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Initializes bounds of view and the movement vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bullet_movement_a95545abaf23c8a2120076127df594db3}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Update this bullet. The rotate and if it is out of window destroy object \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_bullet_movement_ab6f9452d6eefa893c167e52c285d7ce9}{is\+In\+Window}} ()
+\begin{DoxyCompactList}\small\item\em check if the bullet is in the window \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bullet_movement_a331fc1849938f5faf8aec9999f288d4c}{On\+Collision\+Stay}} (Collision col)
+\begin{DoxyCompactList}\small\item\em the rotating movement on collision with planet \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Vector3 \mbox{\hyperlink{class_bullet_movement_a5419583958b87067b7c8b89b2b1c6b09}{shoot\+Current}}
+\begin{DoxyCompactList}\small\item\em Vector of bullet movement. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_bullet_movement_a8e039f4911be004e48a1f2620380c15c}{rotation\+Speed}} = 100.\+0f
+\begin{DoxyCompactList}\small\item\em The speed of rotation around planet in degrees per second. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_bullet_movement_a93263de8f413e1abcbf57f3b30b37e50}{planet}}
+\begin{DoxyCompactList}\small\item\em Planet the bullet is colliding with. \end{DoxyCompactList}\item 
+const string \mbox{\hyperlink{class_bullet_movement_a8a39e066bf0f84fd7ec143eea687ab12}{planet\+Tag}} = \char`\"{}Planet\char`\"{}
+\begin{DoxyCompactList}\small\item\em Planet the bullet is colliding with. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The movement of the bullet, including parts where it rotates around a planet. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_bullet_movement_ab6f9452d6eefa893c167e52c285d7ce9}\label{class_bullet_movement_ab6f9452d6eefa893c167e52c285d7ce9}} 
+\index{Bullet\+Movement@{Bullet\+Movement}!is\+In\+Window@{is\+In\+Window}}
+\index{is\+In\+Window@{is\+In\+Window}!Bullet\+Movement@{Bullet\+Movement}}
+\subsubsection{\texorpdfstring{is\+In\+Window()}{isInWindow()}}
+{\footnotesize\ttfamily bool Bullet\+Movement.\+is\+In\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+check if the bullet is in the window 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true}, if in window was ised, {\ttfamily false} otherwise.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_bullet_movement_a331fc1849938f5faf8aec9999f288d4c}\label{class_bullet_movement_a331fc1849938f5faf8aec9999f288d4c}} 
+\index{Bullet\+Movement@{Bullet\+Movement}!On\+Collision\+Stay@{On\+Collision\+Stay}}
+\index{On\+Collision\+Stay@{On\+Collision\+Stay}!Bullet\+Movement@{Bullet\+Movement}}
+\subsubsection{\texorpdfstring{On\+Collision\+Stay()}{OnCollisionStay()}}
+{\footnotesize\ttfamily void Bullet\+Movement.\+On\+Collision\+Stay (\begin{DoxyParamCaption}\item[{Collision}]{col }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the rotating movement on collision with planet 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col} & Col.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_bullet_movement_aedea440e001bde34585c344da0557b6e}\label{class_bullet_movement_aedea440e001bde34585c344da0557b6e}} 
+\index{Bullet\+Movement@{Bullet\+Movement}!Start@{Start}}
+\index{Start@{Start}!Bullet\+Movement@{Bullet\+Movement}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Bullet\+Movement.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initializes bounds of view and the movement vector. 
+
+\mbox{\Hypertarget{class_bullet_movement_a95545abaf23c8a2120076127df594db3}\label{class_bullet_movement_a95545abaf23c8a2120076127df594db3}} 
+\index{Bullet\+Movement@{Bullet\+Movement}!Update@{Update}}
+\index{Update@{Update}!Bullet\+Movement@{Bullet\+Movement}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Bullet\+Movement.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update this bullet. The rotate and if it is out of window destroy object 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_bullet_movement_a93263de8f413e1abcbf57f3b30b37e50}\label{class_bullet_movement_a93263de8f413e1abcbf57f3b30b37e50}} 
+\index{Bullet\+Movement@{Bullet\+Movement}!planet@{planet}}
+\index{planet@{planet}!Bullet\+Movement@{Bullet\+Movement}}
+\subsubsection{\texorpdfstring{planet}{planet}}
+{\footnotesize\ttfamily Game\+Object Bullet\+Movement.\+planet\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Planet the bullet is colliding with. 
+
+\mbox{\Hypertarget{class_bullet_movement_a8a39e066bf0f84fd7ec143eea687ab12}\label{class_bullet_movement_a8a39e066bf0f84fd7ec143eea687ab12}} 
+\index{Bullet\+Movement@{Bullet\+Movement}!planet\+Tag@{planet\+Tag}}
+\index{planet\+Tag@{planet\+Tag}!Bullet\+Movement@{Bullet\+Movement}}
+\subsubsection{\texorpdfstring{planet\+Tag}{planetTag}}
+{\footnotesize\ttfamily const string Bullet\+Movement.\+planet\+Tag = \char`\"{}Planet\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Planet the bullet is colliding with. 
+
+\mbox{\Hypertarget{class_bullet_movement_a8e039f4911be004e48a1f2620380c15c}\label{class_bullet_movement_a8e039f4911be004e48a1f2620380c15c}} 
+\index{Bullet\+Movement@{Bullet\+Movement}!rotation\+Speed@{rotation\+Speed}}
+\index{rotation\+Speed@{rotation\+Speed}!Bullet\+Movement@{Bullet\+Movement}}
+\subsubsection{\texorpdfstring{rotation\+Speed}{rotationSpeed}}
+{\footnotesize\ttfamily float Bullet\+Movement.\+rotation\+Speed = 100.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The speed of rotation around planet in degrees per second. 
+
+\mbox{\Hypertarget{class_bullet_movement_a5419583958b87067b7c8b89b2b1c6b09}\label{class_bullet_movement_a5419583958b87067b7c8b89b2b1c6b09}} 
+\index{Bullet\+Movement@{Bullet\+Movement}!shoot\+Current@{shoot\+Current}}
+\index{shoot\+Current@{shoot\+Current}!Bullet\+Movement@{Bullet\+Movement}}
+\subsubsection{\texorpdfstring{shoot\+Current}{shootCurrent}}
+{\footnotesize\ttfamily Vector3 Bullet\+Movement.\+shoot\+Current\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Vector of bullet movement. 
+
+\mbox{\Hypertarget{class_bullet_movement_aeb1ed7a8c4bd668bb3039562e46fa63b}\label{class_bullet_movement_aeb1ed7a8c4bd668bb3039562e46fa63b}} 
+\index{Bullet\+Movement@{Bullet\+Movement}!speed@{speed}}
+\index{speed@{speed}!Bullet\+Movement@{Bullet\+Movement}}
+\subsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily float Bullet\+Movement.\+speed = 500}
+
+
+
+The speed. 
+
+\mbox{\Hypertarget{class_bullet_movement_a87f4f6ec7b16819ee058cfc9121660e0}\label{class_bullet_movement_a87f4f6ec7b16819ee058cfc9121660e0}} 
+\index{Bullet\+Movement@{Bullet\+Movement}!x\+Direction\+Coeffcient@{x\+Direction\+Coeffcient}}
+\index{x\+Direction\+Coeffcient@{x\+Direction\+Coeffcient}!Bullet\+Movement@{Bullet\+Movement}}
+\subsubsection{\texorpdfstring{x\+Direction\+Coeffcient}{xDirectionCoeffcient}}
+{\footnotesize\ttfamily int Bullet\+Movement.\+x\+Direction\+Coeffcient}
+
+
+
+The x direction coeffcient. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bullet\+Movement.\+cs\end{DoxyCompactItemize}

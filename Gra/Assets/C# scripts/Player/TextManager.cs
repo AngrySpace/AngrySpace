@@ -9,12 +9,19 @@ public class TextManager : MonoBehaviour
 	/// Player lives text
 	/// </summary>
 	public Text textLives;
+
+    public Text textBonusTimeLeft;
 	
 	void Start ()
 	{
 		UpdateTextLives ();
 	}
 
+    void Update()
+    {
+        if (gameObject.GetComponent<PlayerAttributes>().isSuperSpeed)
+            UpdateBonusTimeLeft();
+    }
 	/// <summary>
 	/// Updates the text lives.
 	/// </summary>
@@ -22,5 +29,10 @@ public class TextManager : MonoBehaviour
 	{
 		textLives.text = gameObject.GetComponent<PlayerAttributes> ().lives.ToString ();
 	}
+
+    private void UpdateBonusTimeLeft()
+    {
+        textBonusTimeLeft.text = gameObject.GetComponent<PlayerBonusLife>().timeLeft.ToString("N2");
+    }
 }
 

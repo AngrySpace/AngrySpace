@@ -1,0 +1,237 @@
+\hypertarget{class_asteroid_generator}{}\section{Asteroid\+Generator Class Reference}
+\label{class_asteroid_generator}\index{Asteroid\+Generator@{Asteroid\+Generator}}
+
+
+Asteroid generator.  
+
+
+Inheritance diagram for Asteroid\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_asteroid_generator}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_asteroid_generator_a4cc51b71a8eb59ad4fa0a58b1ab2fdbc}{Number\+Of\+Asteroids}}
+\begin{DoxyCompactList}\small\item\em The number of asteroids. \end{DoxyCompactList}\item 
+List$<$ Game\+Object $>$ \mbox{\hyperlink{class_asteroid_generator_a96adffc17fece791d1735c8ffd72cd43}{Asteroid\+List}}
+\begin{DoxyCompactList}\small\item\em The asteroid list. \end{DoxyCompactList}\item 
+List$<$ Game\+Object $>$ \mbox{\hyperlink{class_asteroid_generator_a3547304e3d1a3777f6d996e7f6c409de}{added\+Asteroid\+List}} = new List$<$Game\+Object$>$ ()
+\begin{DoxyCompactList}\small\item\em List of already created asteroids. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_asteroid_generator_ac4789385fb5a11f27cf743ddf1e32f93}{Min\+Mass}}
+\begin{DoxyCompactList}\small\item\em The minimum mass. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_asteroid_generator_aaa0eb57c660f14898c0c7b196293584a}{Max\+Mass}}
+\begin{DoxyCompactList}\small\item\em The max mass. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_asteroid_generator_a7bbc470dbc92203ced647f45cf557940}{Min\+Radius}}
+\begin{DoxyCompactList}\small\item\em The minimum radius. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_asteroid_generator_a5e008980325a1f5b6faa04a8b44fdc3e}{Max\+Radius}}
+\begin{DoxyCompactList}\small\item\em The max radius. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_asteroid_generator_ab4e16ac73ae5fc15af5704ad3e6f8bc5}{collider\+Sprite}}
+\begin{DoxyCompactList}\small\item\em The collider sprite. Gameobject representing every planet\textquotesingle{}s collider. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_asteroid_generator_a5d75cc116d119536c96fa54922d97708}{Start}} ()
+\begin{DoxyCompactList}\small\item\em Initialization method. Sets basic fields and invokes method which genearate asteroids. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_asteroid_generator_ac7589dbfe747647e96258ae54a881d82}{Generate\+Asteroids}} ()
+\begin{DoxyCompactList}\small\item\em Generates asteroids in random places. Adds to each asteroid a game\+Object representing sphere collider. \end{DoxyCompactList}\item 
+Game\+Object \mbox{\hyperlink{class_asteroid_generator_a8ee9800524293ee0974caeb3f0077cf5}{build\+Asteroid}} (Vector3 position, int radius)
+\begin{DoxyCompactList}\small\item\em Builds the asteroid, update with parameters \end{DoxyCompactList}\item 
+Vector3 \mbox{\hyperlink{class_asteroid_generator_ae494004ca219dbbe8333f2e3e5cc7887}{find\+Position}} ()
+\begin{DoxyCompactList}\small\item\em Finds position for asteroid. Uses random function. The place in which each asteroid can be created is limited by screen bounds of view. Also, the asteroid should not be created in a big part of players\textquotesingle{} fields of moving. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_asteroid_generator_a70d6b7053f69bbbdc20aa10bfe77f6bb}{is\+Inside\+Other\+Asteroid}} (int current\+Index, Vector3 position, int radius)
+\begin{DoxyCompactList}\small\item\em Chcecks if asteroid to be created collides with other asteroid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const float \mbox{\hyperlink{class_asteroid_generator_ad964b0aa879835d22bc6f81aeb5c5420}{collider\+Sprite\+Radius\+Fraction}} = 5 / 6f
+\begin{DoxyCompactList}\small\item\em The number by which the asteroid collider radius will be multiplied to create collider sprite with proper size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_asteroid_generator_a72473bd4ed85f190e6c60f9aaa9955fa}\label{class_asteroid_generator_a72473bd4ed85f190e6c60f9aaa9955fa}} 
+Quaternion {\bfseries rotation} = new Quaternion ()
+\item 
+\mbox{\Hypertarget{class_asteroid_generator_aa116d4867b8d45af5ae2d843d610b2f7}\label{class_asteroid_generator_aa116d4867b8d45af5ae2d843d610b2f7}} 
+System.\+Random {\bfseries random}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Asteroid generator. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_asteroid_generator_a8ee9800524293ee0974caeb3f0077cf5}\label{class_asteroid_generator_a8ee9800524293ee0974caeb3f0077cf5}} 
+\index{Asteroid\+Generator@{Asteroid\+Generator}!build\+Asteroid@{build\+Asteroid}}
+\index{build\+Asteroid@{build\+Asteroid}!Asteroid\+Generator@{Asteroid\+Generator}}
+\subsubsection{\texorpdfstring{build\+Asteroid()}{buildAsteroid()}}
+{\footnotesize\ttfamily Game\+Object Asteroid\+Generator.\+build\+Asteroid (\begin{DoxyParamCaption}\item[{Vector3}]{position,  }\item[{int}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Builds the asteroid, update with parameters 
+
+\begin{DoxyReturn}{Returns}
+The asteroid.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position.\\
+\hline
+{\em radius} & Radius.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_asteroid_generator_ae494004ca219dbbe8333f2e3e5cc7887}\label{class_asteroid_generator_ae494004ca219dbbe8333f2e3e5cc7887}} 
+\index{Asteroid\+Generator@{Asteroid\+Generator}!find\+Position@{find\+Position}}
+\index{find\+Position@{find\+Position}!Asteroid\+Generator@{Asteroid\+Generator}}
+\subsubsection{\texorpdfstring{find\+Position()}{findPosition()}}
+{\footnotesize\ttfamily Vector3 Asteroid\+Generator.\+find\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Finds position for asteroid. Uses random function. The place in which each asteroid can be created is limited by screen bounds of view. Also, the asteroid should not be created in a big part of players\textquotesingle{} fields of moving. 
+
+\begin{DoxyReturn}{Returns}
+The asteroid position.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_asteroid_generator_ac7589dbfe747647e96258ae54a881d82}\label{class_asteroid_generator_ac7589dbfe747647e96258ae54a881d82}} 
+\index{Asteroid\+Generator@{Asteroid\+Generator}!Generate\+Asteroids@{Generate\+Asteroids}}
+\index{Generate\+Asteroids@{Generate\+Asteroids}!Asteroid\+Generator@{Asteroid\+Generator}}
+\subsubsection{\texorpdfstring{Generate\+Asteroids()}{GenerateAsteroids()}}
+{\footnotesize\ttfamily void Asteroid\+Generator.\+Generate\+Asteroids (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Generates asteroids in random places. Adds to each asteroid a game\+Object representing sphere collider. 
+
+\mbox{\Hypertarget{class_asteroid_generator_a70d6b7053f69bbbdc20aa10bfe77f6bb}\label{class_asteroid_generator_a70d6b7053f69bbbdc20aa10bfe77f6bb}} 
+\index{Asteroid\+Generator@{Asteroid\+Generator}!is\+Inside\+Other\+Asteroid@{is\+Inside\+Other\+Asteroid}}
+\index{is\+Inside\+Other\+Asteroid@{is\+Inside\+Other\+Asteroid}!Asteroid\+Generator@{Asteroid\+Generator}}
+\subsubsection{\texorpdfstring{is\+Inside\+Other\+Asteroid()}{isInsideOtherAsteroid()}}
+{\footnotesize\ttfamily bool Asteroid\+Generator.\+is\+Inside\+Other\+Asteroid (\begin{DoxyParamCaption}\item[{int}]{current\+Index,  }\item[{Vector3}]{position,  }\item[{int}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Chcecks if asteroid to be created collides with other asteroid. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily True} if the asteroid to be created collides with other asteroid, false otherwise.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em current\+Index} & Index of asteroid to be created in added\+Asteroid\+List.\\
+\hline
+{\em position} & Position of asteroid to be created.\\
+\hline
+{\em radius} & Radius of asteroid to be created.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_asteroid_generator_a5d75cc116d119536c96fa54922d97708}\label{class_asteroid_generator_a5d75cc116d119536c96fa54922d97708}} 
+\index{Asteroid\+Generator@{Asteroid\+Generator}!Start@{Start}}
+\index{Start@{Start}!Asteroid\+Generator@{Asteroid\+Generator}}
+\subsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Asteroid\+Generator.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialization method. Sets basic fields and invokes method which genearate asteroids. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_asteroid_generator_a3547304e3d1a3777f6d996e7f6c409de}\label{class_asteroid_generator_a3547304e3d1a3777f6d996e7f6c409de}} 
+\index{Asteroid\+Generator@{Asteroid\+Generator}!added\+Asteroid\+List@{added\+Asteroid\+List}}
+\index{added\+Asteroid\+List@{added\+Asteroid\+List}!Asteroid\+Generator@{Asteroid\+Generator}}
+\subsubsection{\texorpdfstring{added\+Asteroid\+List}{addedAsteroidList}}
+{\footnotesize\ttfamily List$<$Game\+Object$>$ Asteroid\+Generator.\+added\+Asteroid\+List = new List$<$Game\+Object$>$ ()}
+
+
+
+List of already created asteroids. 
+
+\mbox{\Hypertarget{class_asteroid_generator_a96adffc17fece791d1735c8ffd72cd43}\label{class_asteroid_generator_a96adffc17fece791d1735c8ffd72cd43}} 
+\index{Asteroid\+Generator@{Asteroid\+Generator}!Asteroid\+List@{Asteroid\+List}}
+\index{Asteroid\+List@{Asteroid\+List}!Asteroid\+Generator@{Asteroid\+Generator}}
+\subsubsection{\texorpdfstring{Asteroid\+List}{AsteroidList}}
+{\footnotesize\ttfamily List$<$Game\+Object$>$ Asteroid\+Generator.\+Asteroid\+List}
+
+
+
+The asteroid list. 
+
+\mbox{\Hypertarget{class_asteroid_generator_ab4e16ac73ae5fc15af5704ad3e6f8bc5}\label{class_asteroid_generator_ab4e16ac73ae5fc15af5704ad3e6f8bc5}} 
+\index{Asteroid\+Generator@{Asteroid\+Generator}!collider\+Sprite@{collider\+Sprite}}
+\index{collider\+Sprite@{collider\+Sprite}!Asteroid\+Generator@{Asteroid\+Generator}}
+\subsubsection{\texorpdfstring{collider\+Sprite}{colliderSprite}}
+{\footnotesize\ttfamily Game\+Object Asteroid\+Generator.\+collider\+Sprite}
+
+
+
+The collider sprite. Gameobject representing every planet\textquotesingle{}s collider. 
+
+\mbox{\Hypertarget{class_asteroid_generator_ad964b0aa879835d22bc6f81aeb5c5420}\label{class_asteroid_generator_ad964b0aa879835d22bc6f81aeb5c5420}} 
+\index{Asteroid\+Generator@{Asteroid\+Generator}!collider\+Sprite\+Radius\+Fraction@{collider\+Sprite\+Radius\+Fraction}}
+\index{collider\+Sprite\+Radius\+Fraction@{collider\+Sprite\+Radius\+Fraction}!Asteroid\+Generator@{Asteroid\+Generator}}
+\subsubsection{\texorpdfstring{collider\+Sprite\+Radius\+Fraction}{colliderSpriteRadiusFraction}}
+{\footnotesize\ttfamily const float Asteroid\+Generator.\+collider\+Sprite\+Radius\+Fraction = 5 / 6f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The number by which the asteroid collider radius will be multiplied to create collider sprite with proper size. 
+
+\mbox{\Hypertarget{class_asteroid_generator_aaa0eb57c660f14898c0c7b196293584a}\label{class_asteroid_generator_aaa0eb57c660f14898c0c7b196293584a}} 
+\index{Asteroid\+Generator@{Asteroid\+Generator}!Max\+Mass@{Max\+Mass}}
+\index{Max\+Mass@{Max\+Mass}!Asteroid\+Generator@{Asteroid\+Generator}}
+\subsubsection{\texorpdfstring{Max\+Mass}{MaxMass}}
+{\footnotesize\ttfamily int Asteroid\+Generator.\+Max\+Mass}
+
+
+
+The max mass. 
+
+\mbox{\Hypertarget{class_asteroid_generator_a5e008980325a1f5b6faa04a8b44fdc3e}\label{class_asteroid_generator_a5e008980325a1f5b6faa04a8b44fdc3e}} 
+\index{Asteroid\+Generator@{Asteroid\+Generator}!Max\+Radius@{Max\+Radius}}
+\index{Max\+Radius@{Max\+Radius}!Asteroid\+Generator@{Asteroid\+Generator}}
+\subsubsection{\texorpdfstring{Max\+Radius}{MaxRadius}}
+{\footnotesize\ttfamily int Asteroid\+Generator.\+Max\+Radius}
+
+
+
+The max radius. 
+
+\mbox{\Hypertarget{class_asteroid_generator_ac4789385fb5a11f27cf743ddf1e32f93}\label{class_asteroid_generator_ac4789385fb5a11f27cf743ddf1e32f93}} 
+\index{Asteroid\+Generator@{Asteroid\+Generator}!Min\+Mass@{Min\+Mass}}
+\index{Min\+Mass@{Min\+Mass}!Asteroid\+Generator@{Asteroid\+Generator}}
+\subsubsection{\texorpdfstring{Min\+Mass}{MinMass}}
+{\footnotesize\ttfamily int Asteroid\+Generator.\+Min\+Mass}
+
+
+
+The minimum mass. 
+
+\mbox{\Hypertarget{class_asteroid_generator_a7bbc470dbc92203ced647f45cf557940}\label{class_asteroid_generator_a7bbc470dbc92203ced647f45cf557940}} 
+\index{Asteroid\+Generator@{Asteroid\+Generator}!Min\+Radius@{Min\+Radius}}
+\index{Min\+Radius@{Min\+Radius}!Asteroid\+Generator@{Asteroid\+Generator}}
+\subsubsection{\texorpdfstring{Min\+Radius}{MinRadius}}
+{\footnotesize\ttfamily int Asteroid\+Generator.\+Min\+Radius}
+
+
+
+The minimum radius. 
+
+\mbox{\Hypertarget{class_asteroid_generator_a4cc51b71a8eb59ad4fa0a58b1ab2fdbc}\label{class_asteroid_generator_a4cc51b71a8eb59ad4fa0a58b1ab2fdbc}} 
+\index{Asteroid\+Generator@{Asteroid\+Generator}!Number\+Of\+Asteroids@{Number\+Of\+Asteroids}}
+\index{Number\+Of\+Asteroids@{Number\+Of\+Asteroids}!Asteroid\+Generator@{Asteroid\+Generator}}
+\subsubsection{\texorpdfstring{Number\+Of\+Asteroids}{NumberOfAsteroids}}
+{\footnotesize\ttfamily int Asteroid\+Generator.\+Number\+Of\+Asteroids}
+
+
+
+The number of asteroids. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Asteroid\+Generator.\+cs\end{DoxyCompactItemize}
