@@ -4453,6 +4453,9 @@ MonoBehaviour:
   - {fileID: 1333311370628200, guid: 0c9f9145cf3147940a8ca9b7824a96e4, type: 2}
   - {fileID: 1649358917264296, guid: 362c0b1a1e7220f4abe011a1372218b0, type: 2}
   - {fileID: 1789155213236094, guid: 4ce9d61b80751094bbc42905ded665cd, type: 2}
+  - {fileID: 1389269841809166, guid: de917fb10e416394eb853a43dac09240, type: 2}
+  - {fileID: 1179792590788948, guid: 003a182e33f44604e8618ca894ef7b87, type: 2}
+  - {fileID: 1896125761584396, guid: 43d97e7b825d26e49ba1e4fe4b3cf35d, type: 2}
   addedAsteroidList: []
   MinMass: 100
   MaxMass: 10000
@@ -4500,7 +4503,7 @@ MonoBehaviour:
   bonuses:
   - {fileID: 1831864436856178, guid: 69c1387b8f6102540bf4624ff10a1973, type: 2}
   - {fileID: 1556307212662474, guid: 8ce8c69484ef7c7409c8e29dd6d3aa18, type: 2}
-  lifes: 100
+  planetLifes: 1
 --- !u!1 &617745413
 GameObject:
   m_ObjectHideFlags: 0

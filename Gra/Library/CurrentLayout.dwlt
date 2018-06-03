@@ -420,28 +420,28 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: 062f0000
     m_LastClickedID: 0
-    m_ExpandedIDs: 9efbffff00000000
+    m_ExpandedIDs: 0e1efaff1c1ffaffc820faff3e22faff4823faff583afbffda5afbfff4cdfcff8027fdffee28fdfff829fdffd82afdff4e2cfdffb26bfdfff46cfdff006efdff6a6ffdfff270fdff6e79fdffd87afdffea82fdfff084fdff6286fdfff28efdffa490fdfff091fdff3893fdffbe94fdffa296fdffd497fdff46a8fdfff4a9fdfffcaafdffbcacfdffd2b4fdff84b6fdff0ac7fdff16c8fdfffe02feff5604feffc005feff0207feff6c08feffd00dfeff420ffeff5610feffb012feffb813feff9416feff1a18feff2619feff8a1dfeff3e22feff4022feff0024feffc428feff4a2afeff842bfeff8c2cfeffd82dfeff422ffeff4a30feffee4bfeff824efeff8a4ffeff3c51feff7260feffaa68feffac68feffb469feff1e6bfeffb673feff4c75feff5476feff6077feffba7ffeffc680feffa681feffae82feff4e8efeff948ffeffa290feff0c92feff9493feff9c94feffba95feff4cecfeff9609ffff580effffde0fffff2011ffff365fffffb06bffffd27cffff747dffff08a0ffff9efbffff00000000624e0000844e0000a44e0000da4e0000e64e0000224f00006c4f0000f07c0000c67d00001c7e0000488400004e9e000022a4000024a5000024b40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Button1Player
+      m_OriginalName: Button1Player
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 31974
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
   m_ExpandedScenes:
-  - level1
+  - menuPlay
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
@@ -473,7 +473,7 @@ MonoBehaviour:
     height: 566
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 8844.072326658903
+  lastFramingTime: 3209.1390485814927
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
@@ -561,19 +561,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/Scenes
   m_LastFoldersGridSize: 16
   m_LastProjectPath: E:\studia\semestr 6\GK\repo 24.04\AngrySpace\Gra
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 0a280000
-    m_LastClickedID: 10250
-    m_ExpandedIDs: 000000000a28000032280000a4280000182900009a290000be290000202a0000982a0000f02b0000142c0000fa2e00004e3300005033000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 142}
+    m_SelectedIDs: 942b0000
+    m_LastClickedID: 11156
+    m_ExpandedIDs: 000000000a28000032280000a2280000a428000018290000302900009a290000be290000202a0000302a0000982a00007e2b0000f02b0000142c0000362d0000fa2e00004e3300005033000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -628,22 +628,22 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c62300009e2b0000322a00009c290000b4f5eeffa62900007a2b0000402c0000f62c0000762c000044280000ae2c000066290000be2b00004a2a0000842e000026290000e6280000882a0000f428000004280000c429000000000000262a0000722a0000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c62300009e2b0000322a00009c290000b4f5eeffa62900007a2b0000402c0000f62c0000762c000044280000ae2c000066290000be2b00004a2a0000842e000026290000e6280000882a0000f428000004280000c429000000000000262a0000722a0000f2290000fc290000722b00006e2a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: credits
+      m_OriginalName: credits
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 11890
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
