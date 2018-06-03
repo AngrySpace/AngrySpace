@@ -20,10 +20,6 @@ public class BulletMovement : MonoBehaviour
 	/// </summary>
 	float rotationSpeed = 100.0f;
     /// <summary>
-	/// The field telling if the bullet is currently rotating.
-	/// </summary>
-	bool isRotating = false;
-    /// <summary>
 	/// Planet the bullet is colliding with.
 	/// </summary>
 	GameObject planet;
@@ -44,12 +40,9 @@ public class BulletMovement : MonoBehaviour
 	/// </summary>
 	void Update ()
 	{
-		if (!isRotating)
-			transform.Translate (speed * Time.deltaTime * shootCurrent);
-
+		transform.Translate (speed * Time.deltaTime * shootCurrent);
 		if (!isInWindow ())
-			Destroy (gameObject);
-		
+			Destroy (gameObject);		
 	}
 	/// <summary>
 	/// check if the bullet is in the window
@@ -90,21 +83,5 @@ public class BulletMovement : MonoBehaviour
 			transform.RotateAround (planet.transform.position, direction, rotationSpeed * Time.deltaTime);
 
 		}
-	}
-
-    /// <summary>
-	/// When the bullet stops coliding with planet, it should also stop rotating.
-	/// </summary>
-	void OnCollisionExit ()
-	{
-		isRotating = false;
-	}
-
-    /// <summary>
-	/// When the bullet starts coliding with planet, it should also start rotating.
-	/// </summary>
-	void OnCollisionStart ()
-	{
-		isRotating = true;
 	}
 }

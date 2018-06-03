@@ -7,10 +7,6 @@ using UnityEngine;
 public class BonusesController : MonoBehaviour
 {
     /// <summary>
-    /// Asteroid lifes. When equal to zero, asteroid is destroyed.
-    /// </summary>
-    public int planetLifes;
-    /// <summary>
     /// Chance that there will be created bonus in asteroid's place.
     /// </summary>
     public int bonusRate;
@@ -22,4 +18,9 @@ public class BonusesController : MonoBehaviour
     /// List of possible bonuses kinds.
     /// </summary>
     public List<GameObject> bonuses;
+    /// <summary>
+    /// Planet lifes. When equals to zero, the planet will be destroyed and 
+    /// with some probability there should appear bonus in planet's place.
+    /// </summary>
+    public int planetLifes;
 }

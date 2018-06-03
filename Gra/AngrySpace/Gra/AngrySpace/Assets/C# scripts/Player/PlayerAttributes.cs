@@ -18,10 +18,6 @@ public class PlayerAttributes : MonoBehaviour
 	/// </summary>
 	public float rateOfFire;
     /// <summary>
-    /// The typical speed time.
-    /// </summary>
-    private float typicalRateOfFire;
-    /// <summary>
     /// The speed.
     /// </summary>
     public float speed;
@@ -33,6 +29,14 @@ public class PlayerAttributes : MonoBehaviour
 	/// The super speed time.
 	/// </summary>
 	public float superSpeedTime;
+    /// <summary>
+    /// The typical speed time.
+    /// </summary>
+    private float typicalRateOfFire;
+    /// <summary>
+    /// The tag of the enemy.
+    /// </summary>
+    private const string enemyTag = "Enemy";
 
     /// <summary>
 	/// Sets starting values.
@@ -52,7 +56,7 @@ public class PlayerAttributes : MonoBehaviour
         Vector3 playerSize = gameObject.transform.localScale;
         Vector3 positionToSet = new Vector3(CalculateScreenBounds.distanceToHorizontalBoundOfView - playerSize.x - 5, 0, 0);
 
-        if (gameObject.tag == "Enemy")
+        if (gameObject.CompareTag(enemyTag))
             gameObject.transform.SetPositionAndRotation(positionToSet, transform.rotation);
         else
             gameObject.transform.SetPositionAndRotation(-positionToSet, transform.rotation);
@@ -78,6 +82,10 @@ public class PlayerAttributes : MonoBehaviour
         {
             if (GetComponent<AIEnemy>().enabled == true)
                 rateOfFire = 0.2f;
+            else
+            {
+                rateOfFire = 0;
+            }
         }
         else
         {

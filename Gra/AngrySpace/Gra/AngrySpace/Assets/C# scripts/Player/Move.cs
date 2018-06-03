@@ -119,6 +119,7 @@ public class Move : MonoBehaviour
                 break;
             case "BonusFastShots":
                 GetComponent<PlayerAttributes>().isSuperSpeed = true;
+                Debug.Log(GetComponent<PlayerAttributes>().isSuperSpeed);
                 Destroy(col.gameObject);
                 break;
         }

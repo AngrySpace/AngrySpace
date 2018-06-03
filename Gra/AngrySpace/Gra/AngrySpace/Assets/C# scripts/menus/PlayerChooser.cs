@@ -27,10 +27,12 @@ public class PlayerChooser : MonoBehaviour
         if (playerName == "Button1Player")
         {
 			player.GetComponent<AIEnemy> ().enabled = true;
+            player.GetComponent<PlayerKeyController>().enabled = false;
         }
         else if (playerName == "Button2Players")
         {
 			player.GetComponent<AIEnemy> ().enabled = false;
+            player.GetComponent<PlayerKeyController>().enabled = true;
         }
     }
 }

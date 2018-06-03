@@ -83,7 +83,7 @@ public class AsteroidGenerator : MonoBehaviour
         int radius = random.Next(MinRadius, MaxRadius);
         GameObject asteroid = buildAsteroid(position, radius);
         addedAsteroidList.Add(asteroid);
-        colliderSprite.transform.localScale = new Vector3(radius / 2.7f, radius / 2.7f, radius / 2.7f);
+        colliderSprite.transform.localScale = new Vector3(radius * 5f / 6f, radius * 5f / 6f, radius * 5f / 6f);
         asteroid.GetComponent<AsteroidAttributes>().colliderSprite = (GameObject)Instantiate(colliderSprite, asteroid.transform.position, asteroid.transform.rotation);
         for (int i = 1; i < NumberOfAsteroids; i++)
         {
@@ -96,7 +96,7 @@ public class AsteroidGenerator : MonoBehaviour
             } while (isInsideOtherAsteroid(i, position, radius) && maxTime > 0);
             asteroid = buildAsteroid(position, radius);
             addedAsteroidList.Add(asteroid);
-            colliderSprite.transform.localScale = new Vector3(radius / 2.7f, radius / 2.7f, radius / 2.7f);
+            colliderSprite.transform.localScale = new Vector3(radius * 5f / 6f, radius  * 5f / 6f, radius * 5f / 6f);
             asteroid.GetComponent<AsteroidAttributes>().colliderSprite = (GameObject)Instantiate(colliderSprite, asteroid.transform.position, asteroid.transform.rotation);
         }
     }

@@ -14,6 +14,14 @@ public class PlanetLifesController : MonoBehaviour
     /// </summary>
     public GameObject explosionEffect;
     /// <summary>
+    /// Tag of player bullet.
+    /// </summary>
+    private const string bulletPlayerTag = "PlayerBullet";
+    /// <summary>
+    /// Tag of enemy bullet.
+    /// </summary>
+    private const string bulletEnemyTag = "EnemyBullet";
+    /// <summary>
     /// GameObject to instantiate when starting explosion.
     /// </summary>
     private GameObject explosionObject;
@@ -34,12 +42,26 @@ public class PlanetLifesController : MonoBehaviour
     /// The main camera.
     /// </summary>
     private GameObject mainCamera;
+    /// <summary>
+    /// Max frames number that may pass from first player's or enemy's bullet collision to the second.
+    /// </summary>
+    private const int maxFramesPerCollision = 4;
+    /// <summary>
+    /// Current frames number that passed from first player's bullet collision.
+    /// </summary>
+    private int currentFramesAfterCollisionForPlayer;
+    /// <summary>
+    /// Current frames number that passed from first enemy's bullet collision.
+    /// </summary>
+    private int currentFramesAfterCollisionForEnemy;
 
     /// <summary>
     /// Initialization method. Sets main camera object and planet lifes.
     /// </summary>
     public void Start()
     {
+        currentFramesAfterCollisionForPlayer = maxFramesPerCollision;
+        currentFramesAfterCollisionForEnemy = maxFramesPerCollision;
         mainCamera = GameObject.Find("Main Camera");
         lifes = mainCamera.GetComponent<BonusesController>().planetLifes;
     }
@@ -62,6 +84,7 @@ public class PlanetLifesController : MonoBehaviour
             }
             destroyObjects();          
         }
+        decrementFramesAfterCollision();
     }
 
     /// <summary>
@@ -86,23 +109,39 @@ public class PlanetLifesController : MonoBehaviour
     }
 
     /// <summary>
+    /// Decrementsframes that passed from last bullet's collision.
+    /// </summary>
+    private void decrementFramesAfterCollision()
+    {
+        if (currentFramesAfterCollisionForEnemy > 0) currentFramesAfterCollisionForEnemy--;
+        if (currentFramesAfterCollisionForPlayer > 0) currentFramesAfterCollisionForPlayer--;
+    }
+
+    /// <summary>
     /// Checks if planet collides with bullets.
     /// </summary>
     public void OnCollisionEnter(Collision col)
     {
         GameObject bullet = col.gameObject;
-        if (bullet.tag == "PlayerBullet" || bullet.tag == "EnemyBullet")
+        if (bullet.CompareTag(bulletPlayerTag) && currentFramesAfterCollisionForPlayer <= 0)
         {
             decrementLifes();
+            currentFramesAfterCollisionForPlayer = maxFramesPerCollision;
+        }
+        else if (bullet.CompareTag(bulletEnemyTag) && currentFramesAfterCollisionForEnemy <= 0)
+        {
+            decrementLifes();
+            currentFramesAfterCollisionForEnemy = maxFramesPerCollision;
         }
     }
 
     /// <summary>
     /// Decrements planet's lifes and creates explosion object if planet is destroyed.
     /// </summary>
-    private void decrementLifes()
+    public void decrementLifes()
     {
-        if (--lifes == 0)
+        lifes--;
+        if (lifes == 0)
         {
             explosionObject = (GameObject)Instantiate(explosionEffect, transform.position, transform.rotation);
             isExploding = true;

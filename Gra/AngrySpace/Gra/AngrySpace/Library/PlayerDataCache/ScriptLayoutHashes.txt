@@ -124,7 +124,6 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 010aaa8ac4a6ebf60ee49c5f1991d4e0 Assembly-CSharp.dll:.AsteroidAttributes
 322cb40e1e282f28af980cbef7922a90 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
-2d0bb3e5fb59740f6e67562f12779c35 Assembly-CSharp.dll:.GenerateBonuses
 6e714b24188cddfc9ae1e07d05ed4ddd Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.ParticleSystemDestroyer
 879b3df2ab67cfd00172f75f85a7a583 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.SimpleMouseRotator
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
@@ -196,8 +195,9 @@ e56b9ea6ac8a13465acb03c6a46c0f55 Assembly-CSharp.dll:.PlayAgain
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CalculateScreenBounds
 0ad469aca31264c6140b1e503c43ab6b Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.TimedObjectDestructor
 f4b175ffc1eeca85d2783436b4c764a7 Assembly-CSharp-firstpass.dll:UnityStandardAssets.Effects.Explosive
+dc1245ae057bd4d12676c1d4e5b1fd02 Assembly-CSharp.dll:.BonusesController
 2b265c125268fd56da7503a91f9d05ef Assembly-CSharp.dll:.GameOver
-01eb20b1386a8b9e73a760ea978e7d12 Assembly-CSharp.dll:.AIEnemy
+ba146030ec765501f0e4295a77ac6d19 Assembly-CSharp.dll:.AIEnemy
 f88eac401ffdb2f4522fd49834e4a02a Assembly-CSharp.dll:.BulletMovement
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp-firstpass.dll:UnityStandardAssets.Utility.FPSCounter
 ad6304ec701d695140a8fdd700e475de Assembly-CSharp.dll:.PlayerKeyController
