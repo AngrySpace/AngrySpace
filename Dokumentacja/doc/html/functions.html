@@ -86,6 +86,12 @@ $(function() {
 <li>bonusRate
 : <a class="el" href="class_bonuses_controller.html#a01de764707e69ec225d62563fc683cd5">BonusesController</a>
 </li>
+<li>bonusSide
+: <a class="el" href="class_planet_lifes_controller.html#a19bbf874cdc20ef3ba9a31d06d39adda">PlanetLifesController</a>
+</li>
+<li>bonusStart()
+: <a class="el" href="class_player_bonus_life.html#aa535530424b6ea22b6fc63adcbb6c0eb">PlayerBonusLife</a>
+</li>
 <li>bonusToCreate
 : <a class="el" href="class_planet_lifes_controller.html#ae8bdcd0933ed5c468cec8d5c8cd32028">PlanetLifesController</a>
 </li>
@@ -117,6 +123,9 @@ $(function() {
 , <a class="el" href="class_pause_game.html#adf677814c2492d0887efd5ea18e6bba4">PauseGame</a>
 , <a class="el" href="class_play_again.html#ad48a4dfa626a86c3b686a6c66537612e">PlayAgain</a>
 </li>
+<li>canvasBonusFastShots
+: <a class="el" href="class_player_bonus_life.html#a639830bbfb09f6ec5552332382af36b5">PlayerBonusLife</a>
+</li>
 <li>chanceToShoot
 : <a class="el" href="class_a_i_enemy.html#a4514cc12da817389aefe66b88929422a">AIEnemy</a>
 </li>
@@ -132,6 +141,9 @@ $(function() {
 </li>
 <li>collisionSides
 : <a class="el" href="class_move.html#a727888662ad4981d5935f212174e050b">Move</a>
+</li>
+<li>countDownTime()
+: <a class="el" href="class_player_bonus_life.html#ae2584fa6aaca328d5a53adac2179d982">PlayerBonusLife</a>
 </li>
 <li>currentFramesAfterCollisionForEnemy
 : <a class="el" href="class_planet_lifes_controller.html#a4c6041e085fa84eb7460e668842b9ef0">PlanetLifesController</a>
@@ -225,6 +237,9 @@ $(function() {
 <h3><a id="index_i"></a>- i -</h3><ul>
 <li>IncrementLives()
 : <a class="el" href="class_player_attributes.html#a0dfec30b6ea5d4246790c1038c6e4c45">PlayerAttributes</a>
+</li>
+<li>isBonusStarted
+: <a class="el" href="class_player_bonus_life.html#a960cbf78990b1b82a3f5a2b8c3655636">PlayerBonusLife</a>
 </li>
 <li>isCollisionWithPlanet
 : <a class="el" href="class_move.html#a2d2bbc6c6fb1799016e619d21362f4c1">Move</a>
@@ -347,8 +362,14 @@ $(function() {
 <li>player
 : <a class="el" href="class_player_chooser.html#a0b6190b6135c1cda958ac9d079a254c8">PlayerChooser</a>
 </li>
+<li>player1Bonus
+: <a class="el" href="class_place_score_bars.html#aa12252c4b22bb6ef032ba4d84a6b2e09">PlaceScoreBars</a>
+</li>
 <li>player1Score
 : <a class="el" href="class_place_score_bars.html#acbdc64a22696d614a80fb2290e2e7be7">PlaceScoreBars</a>
+</li>
+<li>player2Bonus
+: <a class="el" href="class_place_score_bars.html#a1060ad64860e3357c4401ea061b0390b">PlaceScoreBars</a>
 </li>
 <li>player2Score
 : <a class="el" href="class_place_score_bars.html#a53a2fc54c5de9160788eac17a2ff9e90">PlaceScoreBars</a>
@@ -396,8 +417,14 @@ $(function() {
 <li>setPlayerPosition()
 : <a class="el" href="class_player_attributes.html#a9c30141dd1440bd1495b69b0f261190c">PlayerAttributes</a>
 </li>
+<li>setSide()
+: <a class="el" href="class_bonus_movement.html#ad1e78d0d2ff379a94de9a1d8c961bdd1">BonusMovement</a>
+</li>
 <li>shootCurrent
 : <a class="el" href="class_bullet_movement.html#a5419583958b87067b7c8b89b2b1c6b09">BulletMovement</a>
+</li>
+<li>shouldCountDownTime
+: <a class="el" href="class_player_bonus_life.html#a1435b5bc86866c986d2c2b7ebaf6ee36">PlayerBonusLife</a>
 </li>
 <li>side
 : <a class="el" href="class_bonus_movement.html#a6e42122052649933fe8e7bb8d50314c7">BonusMovement</a>
@@ -426,6 +453,7 @@ $(function() {
 , <a class="el" href="class_place_score_bars.html#adf99a036ca929e8b17236267e9dc3737">PlaceScoreBars</a>
 , <a class="el" href="class_planet_lifes_controller.html#acb812ee09ae6ed65b85baf971a582b25">PlanetLifesController</a>
 , <a class="el" href="class_player_attributes.html#afa03395e71444c6bbaa339236b13ff64">PlayerAttributes</a>
+, <a class="el" href="class_player_bonus_life.html#ae8b6028d41a0b0122cbf45f2bced82b5">PlayerBonusLife</a>
 , <a class="el" href="class_player_chooser.html#ac1fe910f0756a8e4a7dd42fec4b4ddda">PlayerChooser</a>
 </li>
 <li>StartLevel()
@@ -449,11 +477,17 @@ $(function() {
 
 
 <h3><a id="index_t"></a>- t -</h3><ul>
+<li>textBonusTimeLeft
+: <a class="el" href="class_text_manager.html#aaab06b53f07747bbcdc91c92e4728c33">TextManager</a>
+</li>
 <li>textLives
 : <a class="el" href="class_text_manager.html#a8b12b74376f0b32cbef62f6b041e25f4">TextManager</a>
 </li>
 <li>textWhoWon
 : <a class="el" href="class_game_over.html#a05fc5c0c7a78b9a32de2bd9a9bfcac57">GameOver</a>
+</li>
+<li>timeLeft
+: <a class="el" href="class_player_bonus_life.html#a806effc40f9f5a9b979337d907388478">PlayerBonusLife</a>
 </li>
 <li>typicalRateOfFire
 : <a class="el" href="class_player_attributes.html#a15db75878d8d850cf083ff6a35751fd3">PlayerAttributes</a>
@@ -472,8 +506,12 @@ $(function() {
 , <a class="el" href="class_pause_game.html#ab0e714ec7b02d822c8491abba21d55fb">PauseGame</a>
 , <a class="el" href="class_planet_lifes_controller.html#a55a364780e2e20cb157170ce5c3b534c">PlanetLifesController</a>
 , <a class="el" href="class_player_attributes.html#a5b1eb70086158522067e99f7900b679c">PlayerAttributes</a>
+, <a class="el" href="class_player_bonus_life.html#af65c4e1cdceaa7d3b4524f9dd806be3e">PlayerBonusLife</a>
 , <a class="el" href="class_player_key_controller.html#adb9fec464f806430557e5d4f2fd1fdcf">PlayerKeyController</a>
 , <a class="el" href="classrotate.html#a4005d36825adc52547585541c3ddbd22">rotate</a>
+</li>
+<li>UpdateBonusTimeLeft()
+: <a class="el" href="class_text_manager.html#aa184c769acbaa085e03414a2d22b45ad">TextManager</a>
 </li>
 <li>UpdateTextLives()
 : <a class="el" href="class_text_manager.html#a3bbadf652b27afb331e85866cc2b46d4">TextManager</a>

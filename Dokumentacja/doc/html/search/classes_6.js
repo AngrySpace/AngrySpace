@@ -5,6 +5,7 @@ var searchData=
   ['planetlifescontroller',['PlanetLifesController',['../class_planet_lifes_controller.html',1,'']]],
   ['playagain',['PlayAgain',['../class_play_again.html',1,'']]],
   ['playerattributes',['PlayerAttributes',['../class_player_attributes.html',1,'']]],
+  ['playerbonuslife',['PlayerBonusLife',['../class_player_bonus_life.html',1,'']]],
   ['playerchooser',['PlayerChooser',['../class_player_chooser.html',1,'']]],
   ['playerkeycontroller',['PlayerKeyController',['../class_player_key_controller.html',1,'']]]
 ];

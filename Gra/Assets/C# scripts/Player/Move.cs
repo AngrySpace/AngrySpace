@@ -119,7 +119,8 @@ public class Move : MonoBehaviour
                 break;
             case "BonusFastShots":
                 GetComponent<PlayerAttributes>().isSuperSpeed = true;
-                GetComponent<PlayerBonusLife>().startBonus = true;
+                GetComponent<PlayerAttributes>().superSpeedLeftTime = GetComponent<PlayerAttributes>().superSpeedTime;
+                GetComponent<PlayerBonusLife>().isBonusStarted = true;
                 Destroy(col.gameObject);
                 break;
         }

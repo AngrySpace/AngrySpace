@@ -3888,7 +3888,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 25034bf946aaf4f41986da76862a11da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 25034bf946aaf4f41986da76862a11da, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4208,7 +4208,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &503363470
 MeshFilter:
@@ -4262,6 +4262,7 @@ MonoBehaviour:
   speed: 12
   isSuperSpeed: 0
   superSpeedTime: 5
+  superSpeedLeftTime: 0
 --- !u!114 &503363474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4312,8 +4313,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d560795dd7b56c42a11883e3124340a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasBonusLife: {fileID: 1164263554}
-  startBonus: 0
+  canvasBonusFastShots: {fileID: 1164263554}
+  isBonusStarted: 0
   timeLeft: 0
 --- !u!1 &569163605
 GameObject:
@@ -4604,7 +4605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1673f449307a5894f8c72cb210b28923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfAsteroids: 12
+  NumberOfAsteroids: 15
   AsteroidList:
   - {fileID: 1254157168026454, guid: c4f48c35414c0124b83c0dee1d33d8d4, type: 2}
   - {fileID: 1381320049022272, guid: fd1881c9002e29049b8546a2eef60a20, type: 2}
@@ -4665,7 +4666,7 @@ MonoBehaviour:
   bonuses:
   - {fileID: 1831864436856178, guid: 69c1387b8f6102540bf4624ff10a1973, type: 2}
   - {fileID: 1556307212662474, guid: 8ce8c69484ef7c7409c8e29dd6d3aa18, type: 2}
-  planetLifes: 100
+  planetLifes: 60
 --- !u!1 &617745413
 GameObject:
   m_ObjectHideFlags: 0
@@ -6573,6 +6574,7 @@ MonoBehaviour:
   speed: 12
   isSuperSpeed: 0
   superSpeedTime: 5
+  superSpeedLeftTime: 0
 --- !u!54 &1459401501
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6684,8 +6686,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d560795dd7b56c42a11883e3124340a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasBonusLife: {fileID: 1779163224}
-  startBonus: 0
+  canvasBonusFastShots: {fileID: 1779163224}
+  isBonusStarted: 0
   timeLeft: 0
 --- !u!1 &1483335001
 GameObject:

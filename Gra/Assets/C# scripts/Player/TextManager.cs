@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class TextManager : MonoBehaviour
 {
 	/// <summary>
-	/// Player lives text
+	/// Player lives text.
 	/// </summary>
 	public Text textLives;
-
+    /// <summary>
+	/// Remaining bonus fast shots time text
+	/// </summary>
     public Text textBonusTimeLeft;
 	
 	void Start ()
@@ -30,6 +32,9 @@ public class TextManager : MonoBehaviour
 		textLives.text = gameObject.GetComponent<PlayerAttributes> ().lives.ToString ();
 	}
 
+    /// <summary>
+	/// Updates the bons fast shots left time text.
+	/// </summary>
     private void UpdateBonusTimeLeft()
     {
         textBonusTimeLeft.text = gameObject.GetComponent<PlayerBonusLife>().timeLeft.ToString("N2");

@@ -81,7 +81,7 @@ public class PlanetLifesController : MonoBehaviour
         {        
             int bonusRate = mainCamera.GetComponent<BonusesController>().bonusRate;
             int randomIsBonus = random.Next(0, bonusRate);
-            //if (randomIsBonus == 0)
+            if (randomIsBonus == 0)
             {
                 generateBonus();               
             }
@@ -96,7 +96,7 @@ public class PlanetLifesController : MonoBehaviour
     private void generateBonus()
     {
         int randomBonus = random.Next(0, mainCamera.GetComponent<BonusesController>().bonusesNumber);
-        bonusToCreate = mainCamera.GetComponent<BonusesController>().bonuses[1];
+        bonusToCreate = mainCamera.GetComponent<BonusesController>().bonuses[randomBonus];
         GameObject bonus = Instantiate(bonusToCreate, transform.position, transform.rotation);
 		bonus.GetComponent<BonusMovement> ().setSide (this.bonusSide);
     }

@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
-
+/// <summary>
+/// Class representing the movement of the bullet and it's reaction to the collision,
+/// which is rotating around colliding planet.
+/// </summary>
 public class BulletMovement : MonoBehaviour
 {
 	/// <summary>

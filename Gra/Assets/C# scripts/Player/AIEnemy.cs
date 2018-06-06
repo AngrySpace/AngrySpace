@@ -16,10 +16,17 @@ public class AIEnemy : MonoBehaviour
     /// </summary>
     private int Directions = 8;
     /// <summary>
-    /// The horizontal and vertical move.
+    /// The horizontal move.
     /// </summary>
-    private int moveHorizontal, moveVertical;
-	private int frameMovementDuration = 0;
+    private int moveHorizontal;
+    /// <summary>
+    /// The vertical move.
+    /// </summary>
+    private int moveVertical;
+    /// <summary>
+    /// The duration between frame movement.
+    /// </summary>
+    private int frameMovementDuration = 0;
     /// <summary>
     /// Minimum player's speed.
     /// </summary>

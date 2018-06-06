@@ -1083,7 +1083,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 1, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &503363470
 MeshFilter:
@@ -1151,6 +1151,7 @@ MonoBehaviour:
   speed: 12
   isSuperSpeed: 0
   superSpeedTime: 5
+  superSpeedLeftTime: 0
 --- !u!114 &503363475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1190,8 +1191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d560795dd7b56c42a11883e3124340a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasBonusLife: {fileID: 1436428561}
-  startBonus: 0
+  canvasBonusFastShots: {fileID: 1436428561}
+  isBonusStarted: 0
   timeLeft: 0
 --- !u!1 &523083332
 GameObject:
@@ -1344,8 +1345,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d560795dd7b56c42a11883e3124340a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasBonusLife: {fileID: 306866324}
-  startBonus: 0
+  canvasBonusFastShots: {fileID: 306866324}
+  isBonusStarted: 0
   timeLeft: 0
 --- !u!114 &523083341
 MonoBehaviour:
@@ -1358,7 +1359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602a22ed0500bc14987019d7dd1bc069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chanceToShoot: 50
+  chanceToShoot: 40
 --- !u!114 &523083342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1404,6 +1405,7 @@ MonoBehaviour:
   speed: 12
   isSuperSpeed: 0
   superSpeedTime: 5
+  superSpeedLeftTime: 0
 --- !u!114 &523083345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1636,7 +1638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1673f449307a5894f8c72cb210b28923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfAsteroids: 8
+  NumberOfAsteroids: 10
   AsteroidList:
   - {fileID: 1789155213236094, guid: 4ce9d61b80751094bbc42905ded665cd, type: 2}
   - {fileID: 1392488411529894, guid: 6588199439d7d46488c72fb95e289b8a, type: 2}
@@ -1697,7 +1699,7 @@ MonoBehaviour:
   bonuses:
   - {fileID: 1831864436856178, guid: 69c1387b8f6102540bf4624ff10a1973, type: 2}
   - {fileID: 1556307212662474, guid: 8ce8c69484ef7c7409c8e29dd6d3aa18, type: 2}
-  planetLifes: 50
+  planetLifes: 30
 --- !u!1 &617705739
 GameObject:
   m_ObjectHideFlags: 0

@@ -23,7 +23,8 @@ public class PlaceScoreBars : MonoBehaviour {
     public Image player2Bonus;
 
     /// <summary>
-    /// Counts screen bounds and places score bars in upper corners.
+    /// Counts screen bounds and places score bars in upper corners. Also counts coordinates to place bars
+    /// with remaining bonus time.
     /// </summary>
     void Start ()
     {

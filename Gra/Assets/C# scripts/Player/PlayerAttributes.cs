@@ -31,7 +31,7 @@ public class PlayerAttributes : MonoBehaviour
     /// <summary>
 	/// The super speed left time.
 	/// </summary>
-	private float superSpeedLeftTime;
+	public float superSpeedLeftTime;
     /// <summary>
     /// The typical speed time.
     /// </summary>

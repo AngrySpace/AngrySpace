@@ -1,6 +1,7 @@
 var searchData=
 [
   ['shootcurrent',['shootCurrent',['../class_bullet_movement.html#a5419583958b87067b7c8b89b2b1c6b09',1,'BulletMovement']]],
+  ['shouldcountdowntime',['shouldCountDownTime',['../class_player_bonus_life.html#a1435b5bc86866c986d2c2b7ebaf6ee36',1,'PlayerBonusLife']]],
   ['side',['side',['../class_bonus_movement.html#a6e42122052649933fe8e7bb8d50314c7',1,'BonusMovement.side()'],['../class_move.html#a0cf32cb803f7b4783a49ea55c9746dba',1,'Move.side()']]],
   ['speed',['speed',['../class_bonus_movement.html#af663a81c63835c143bc17cb1f86e8e46',1,'BonusMovement.speed()'],['../class_bullet_movement.html#aeb1ed7a8c4bd668bb3039562e46fa63b',1,'BulletMovement.speed()'],['../class_player_attributes.html#a3c05ed20ca014ddef39d9e361bf9afe9',1,'PlayerAttributes.speed()']]],
   ['speedmax',['speedMax',['../class_a_i_enemy.html#ab58b10c5bfa39b50fa545840a9c1270b',1,'AIEnemy']]],
